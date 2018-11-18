@@ -1,0 +1,100 @@
+use SEGTRANSA
+GO
+
+
+
+/* CREACION DE TABLAS */
+
+--Crear tabla usuario
+CREATE TABLE Usuarios(
+idUsuario VARCHAR(12) PRIMARY KEY,
+nombre VARCHAR(20),
+apellido1 VARCHAR (20),
+apellido2 VARCHAR(20),
+contrasena VARCHAR (11) not null,
+telefono VARCHAR(20),
+CONSTRAINT chktelefono CHECK(telefono like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+genero CHAR(1),
+correo VARCHAR(75),
+CONSTRAINT chkCorreo CHECK (correo like '%_@_%'),
+direccion VARCHAR(75),
+fechaCreacion DATETIME); 
+
+--Crear tabla de Provedor 
+CREATE TABLE Proveedores(
+idProveedor INT IDENTITY(1000,1) PRIMARY KEY,
+nombre VARCHAR(25),
+telefono VARCHAR(20),
+CONSTRAINT chkTelefonoP CHECK(telefono like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+correo VARCHAR(75),
+CONSTRAINT chkCorreoP CHECK (correo like '%_@_%'),
+direccion VARCHAR(75));
+
+--Crear tabla de CategoriaUsuario
+CREATE TABLE CategoriaUsuarios(
+idUsuario VARCHAR(12),
+FOREIGN KEY (idUsuario) REFERENCES dbo.Usuarios(idUsuario),
+estado VARCHAR(15),
+tipoUsuario VARCHAR(15)
+);
+
+--Crear tabla de Categoria Activo
+CREATE TABLE CategoriaActivos(
+idCategoriaActivos INT IDENTITY(2000,1) PRIMARY KEY ,
+estado VARCHAR(15),
+categoria VARCHAR(45),
+garantia VARCHAR(25)
+);
+
+--Crear tabla de Activos
+CREATE TABLE Activos(
+idActivo INT IDENTITY(1,1) PRIMARY KEY,
+idProveedor INT,
+FOREIGN KEY(idProveedor) REFERENCES dbo.Proveedores(idProveedor),
+idCategoriaActivo INT,
+FOREIGN KEY(idCategoriaActivo) REFERENCES dbo.CategoriaActivos(idCategoriaActivos),
+descripcion VARCHAR(50) not null,
+precio MONEY,
+foto IMAGE,
+fechaCompra DATETIME
+);
+
+
+
+
+--Crear tabla de Asignacion
+CREATE TABLE Asignaciones(
+idAsignacion INT IDENTITY(3000,1) PRIMARY KEY,
+idUsuario VARCHAR(12) ,
+FOREIGN KEY (idUsuario) REFERENCES dbo.Usuarios(idUsuario),
+idActivo INT,
+FOREIGN KEY (idActivo) REFERENCES dbo.Activos(idActivo),
+fechaInicialAsignacion DATETIME,
+fechaFinalAsignacion DATETIME);
+
+--Crear tabla de Reporte
+CREATE TABLE Reportes(
+idReporte INT IDENTITY(4000,1) PRIMARY KEY,
+idActivo INT,
+idUsuario VARCHAR(12) ,
+FOREIGN KEY (idUsuario) REFERENCES dbo.Usuarios(idUsuario),
+descripcion VARCHAR(75),
+fechaCreacion DATETIME);
+
+--Crear tabla de Categoria del Reporte
+CREATE TABLE CategoriaReportes(
+idReporte INT,
+FOREIGN KEY (idReporte) REFERENCES dbo.Reportes(idReporte),
+estado VARCHAR(25),
+categoria VARCHAR(45)
+)
+
+
+--Crear tabla de Bitacoras
+CREATE TABLE Bitacora(
+idUsuario VARCHAR(12),
+FOREIGN KEY (idUsuario) REFERENCES dbo.Usuarios(idUsuario),
+fechaInicio DATETIME,
+fechaFin DATETIME
+);
+
