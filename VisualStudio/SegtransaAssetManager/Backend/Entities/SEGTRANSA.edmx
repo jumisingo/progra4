@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BDContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SEGTRANSAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Activos">
           <Key>
             <PropertyRef Name="idActivo" />
@@ -161,7 +161,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDContextStoreContainer">
+        <EntityContainer Name="SEGTRANSAModelStoreContainer">
           <EntitySet Name="Activos" EntityType="Self.Activos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CategoriaActivos" EntityType="Self.CategoriaActivos" Schema="dbo" store:Type="Tables" />
@@ -193,7 +193,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BDContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SEGTRANSAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Activos">
           <Key>
             <PropertyRef Name="idActivo" />
@@ -330,7 +330,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SEGTRANSAEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BDContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Activos" EntityType="Self.Activos" />
           <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" />
           <EntitySet Name="CategoriaActivos" EntityType="Self.CategoriaActivos" />
@@ -363,9 +363,9 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BDContextStoreContainer" CdmEntityContainer="SEGTRANSAEntities">
+        <EntityContainerMapping StorageEntityContainer="SEGTRANSAModelStoreContainer" CdmEntityContainer="BDContext">
           <EntitySetMapping Name="Activos">
-            <EntityTypeMapping TypeName="BDContext.Activos">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.Activos">
               <MappingFragment StoreEntitySet="Activos">
                 <ScalarProperty Name="idActivo" ColumnName="idActivo" />
                 <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
@@ -378,7 +378,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Asignaciones">
-            <EntityTypeMapping TypeName="BDContext.Asignaciones">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.Asignaciones">
               <MappingFragment StoreEntitySet="Asignaciones">
                 <ScalarProperty Name="idAsignacion" ColumnName="idAsignacion" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
@@ -389,7 +389,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CategoriaActivos">
-            <EntityTypeMapping TypeName="BDContext.CategoriaActivos">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.CategoriaActivos">
               <MappingFragment StoreEntitySet="CategoriaActivos">
                 <ScalarProperty Name="idCategoriaActivos" ColumnName="idCategoriaActivos" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
@@ -399,7 +399,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Proveedores">
-            <EntityTypeMapping TypeName="BDContext.Proveedores">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.Proveedores">
               <MappingFragment StoreEntitySet="Proveedores">
                 <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -410,7 +410,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reportes">
-            <EntityTypeMapping TypeName="BDContext.Reportes">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.Reportes">
               <MappingFragment StoreEntitySet="Reportes">
                 <ScalarProperty Name="idReporte" ColumnName="idReporte" />
                 <ScalarProperty Name="idActivo" ColumnName="idActivo" />
@@ -421,7 +421,7 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="BDContext.Usuarios">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />

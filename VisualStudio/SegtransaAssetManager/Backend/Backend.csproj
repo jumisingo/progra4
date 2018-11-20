@@ -50,12 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\IUsuariosDAL - Copy.cs" />
+    <Compile Include="DAL\CategoriaActivosImplDAL.cs" />
+    <Compile Include="DAL\ReportesImplDAL.cs" />
+    <Compile Include="DAL\ProveedoresImplDAL.cs" />
+    <Compile Include="DAL\UsuariosImplDAL.cs" />
+    <Compile Include="DAL\AsignacionesImplDAL.cs" />
+    <Compile Include="DAL\ActivosImplDAL.cs" />
+    <Compile Include="DAL\IActivosDAL.cs" />
     <Compile Include="DAL\IReportesDAL.cs" />
     <Compile Include="DAL\IProveedoresDAL.cs" />
-    <Compile Include="DAL\ICategoriaActivosDAL.cs" />
     <Compile Include="DAL\IAsignacionesDAL.cs" />
-    <Compile Include="DAL\IActivosDAL.cs" />
+    <Compile Include="DAL\ICategoriaActivosDAL.cs" />
+    <Compile Include="DAL\IUsuariosDAL.cs" />
     <Compile Include="Entities\Activos.cs">
       <DependentUpon>SEGTRANSA.tt</DependentUpon>
     </Compile>
@@ -95,13 +101,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Entities\SEGTRANSA.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SEGTRANSA.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="Entities\SEGTRANSA.edmx.diagram">
       <DependentUpon>SEGTRANSA.edmx</DependentUpon>
     </None>
@@ -110,8 +114,8 @@
   <ItemGroup>
     <Content Include="Entities\SEGTRANSA.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SEGTRANSA.Context.cs</LastGenOutput>
       <DependentUpon>SEGTRANSA.edmx</DependentUpon>
+      <LastGenOutput>SEGTRANSA.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Entities\SEGTRANSA.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -119,6 +123,5 @@
       <LastGenOutput>SEGTRANSA.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

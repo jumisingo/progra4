@@ -13,10 +13,10 @@ namespace Backend.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SEGTRANSAEntities : DbContext
+    public partial class BDContext : DbContext
     {
-        public SEGTRANSAEntities()
-            : base("name=SEGTRANSAEntities")
+        public BDContext()
+            : base("name=BDContext")
         {
         }
     

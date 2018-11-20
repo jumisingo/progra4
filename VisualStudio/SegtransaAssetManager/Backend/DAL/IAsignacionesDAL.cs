@@ -8,12 +8,12 @@ using Backend.DAL;
 
 namespace Backend.DAL
 {
-    public interface ICategoriaActivosDAL : IDisposable
+    public interface IAsignacionesDAL : IDisposable
     {
-        void Add(CategoriaActivos CategoriaActivo);
-        void Delete(int idCategoriaActivo);
-        void Update(CategoriaActivos CategoriaActivo);
-        CategoriaActivos GetCategoriaActivo(int idCategoriaActivo);
-        List<CategoriaActivos> GetCategoriaActivos();
+        void Add(Asignaciones Asignacion);
+        void Delete(int idAsignacion);
+        void Update(Asignaciones Asignacion);
+        Asignaciones GetAsignacion(int idAsignacion);
+        List<Asignaciones> GetAsignaciones();
     }
 }
