@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SEGTRANSAModelStoreContainer" CdmEntityContainer="BDContext">
+    <EntitySetMapping Name="Activos">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.Activos">
+        <MappingFragment StoreEntitySet="Activos">
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="idCategoriaActivo" ColumnName="idCategoriaActivo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Asignaciones">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.Asignaciones">
+        <MappingFragment StoreEntitySet="Asignaciones">
+          <ScalarProperty Name="idAsignacion" ColumnName="idAsignacion" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="fechaInicialAsignacion" ColumnName="fechaInicialAsignacion" />
+          <ScalarProperty Name="fechaFinalAsignacion" ColumnName="fechaFinalAsignacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriaActivos">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.CategoriaActivos">
+        <MappingFragment StoreEntitySet="CategoriaActivos">
+          <ScalarProperty Name="idCategoriaActivos" ColumnName="idCategoriaActivos" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="garantia" ColumnName="garantia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.Proveedores">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reportes">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.Reportes">
+        <MappingFragment StoreEntitySet="Reportes">
+          <ScalarProperty Name="idReporte" ColumnName="idReporte" />
+          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+          <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
