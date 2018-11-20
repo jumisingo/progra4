@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>ac500664-1ca8-47aa-8157-c4308dc1d5e5</ProjectGuid>
+    <ProjectGuid>{AC500664-1CA8-47AA-8157-C4308DC1D5E5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Backend</RootNamespace>
@@ -31,24 +31,94 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DAL\IUsuariosDAL - Copy.cs" />
+    <Compile Include="DAL\IReportesDAL.cs" />
+    <Compile Include="DAL\IProveedoresDAL.cs" />
+    <Compile Include="DAL\ICategoriaActivosDAL.cs" />
+    <Compile Include="DAL\IAsignacionesDAL.cs" />
+    <Compile Include="DAL\IActivosDAL.cs" />
+    <Compile Include="Entities\Activos.cs">
+      <DependentUpon>SEGTRANSA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Asignaciones.cs">
+      <DependentUpon>SEGTRANSA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CategoriaActivos.cs">
+      <DependentUpon>SEGTRANSA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Proveedores.cs">
+      <DependentUpon>SEGTRANSA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Reportes.cs">
+      <DependentUpon>SEGTRANSA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SEGTRANSA.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSA.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SEGTRANSA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SEGTRANSA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SEGTRANSA.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Usuarios.cs">
+      <DependentUpon>SEGTRANSA.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entities\SEGTRANSA.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SEGTRANSA.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Entities\SEGTRANSA.edmx.diagram">
+      <DependentUpon>SEGTRANSA.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\SEGTRANSA.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SEGTRANSA.Context.cs</LastGenOutput>
+      <DependentUpon>SEGTRANSA.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entities\SEGTRANSA.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SEGTRANSA.edmx</DependentUpon>
+      <LastGenOutput>SEGTRANSA.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activos">
+          <Key>
+            <PropertyRef Name="idActivo" />
+          </Key>
+          <Property Name="idActivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProveedor" Type="int" />
+          <Property Name="idCategoriaActivo" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="precio" Type="money" />
+          <Property Name="foto" Type="image" />
+          <Property Name="fechaCompra" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Asignaciones">
+          <Key>
+            <PropertyRef Name="idAsignacion" />
+          </Key>
+          <Property Name="idAsignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
+          <Property Name="idActivo" Type="int" />
+          <Property Name="fechaInicialAsignacion" Type="datetime" />
+          <Property Name="fechaFinalAsignacion" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'SEGTRANSA.dbo.Bitacora' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Bitacora">
+          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
+          <Property Name="fechaInicio" Type="datetime" />
+          <Property Name="fechaFin" Type="datetime" />
+        </EntityType>-->
+        <EntityType Name="CategoriaActivos">
+          <Key>
+            <PropertyRef Name="idCategoriaActivos" />
+          </Key>
+          <Property Name="idCategoriaActivos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="15" />
+          <Property Name="categoria" Type="varchar" MaxLength="45" />
+          <Property Name="garantia" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'SEGTRANSA.dbo.CategoriaReportes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CategoriaReportes">
+          <Property Name="idReporte" Type="int" />
+          <Property Name="estado" Type="varchar" MaxLength="25" />
+          <Property Name="categoria" Type="varchar" MaxLength="45" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'SEGTRANSA.dbo.CategoriaUsuarios' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CategoriaUsuarios">
+          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
+          <Property Name="estado" Type="varchar" MaxLength="15" />
+          <Property Name="tipoUsuario" Type="varchar" MaxLength="15" />
+        </EntityType>-->
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="idProveedor" />
+          </Key>
+          <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="correo" Type="varchar" MaxLength="75" />
+          <Property Name="direccion" Type="varchar" MaxLength="75" />
+        </EntityType>
+        <EntityType Name="Reportes">
+          <Key>
+            <PropertyRef Name="idReporte" />
+          </Key>
+          <Property Name="idReporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idActivo" Type="int" />
+          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
+          <Property Name="descripcion" Type="varchar" MaxLength="75" />
+          <Property Name="fechaCreacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="20" />
+          <Property Name="apellido1" Type="varchar" MaxLength="20" />
+          <Property Name="apellido2" Type="varchar" MaxLength="20" />
+          <Property Name="contrasena" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="genero" Type="char" MaxLength="1" />
+          <Property Name="correo" Type="varchar" MaxLength="75" />
+          <Property Name="direccion" Type="varchar" MaxLength="75" />
+          <Property Name="fechaCreacion" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__Activos__idCateg__300424B4">
+          <End Role="CategoriaActivos" Type="Self.CategoriaActivos" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaActivos">
+              <PropertyRef Name="idCategoriaActivos" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idCategoriaActivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Activos__idProve__2F10007B">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Asignacio__idAct__33D4B598">
+          <End Role="Activos" Type="Self.Activos" Multiplicity="0..1" />
+          <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activos">
+              <PropertyRef Name="idActivo" />
+            </Principal>
+            <Dependent Role="Asignaciones">
+              <PropertyRef Name="idActivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Asignacio__idUsu__32E0915F">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Asignaciones">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'SEGTRANSA.dbo.Bitacora' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Bitacora__idUsua__3A81B327" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'SEGTRANSA.dbo.CategoriaReportes' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Categoria__idRep__38996AB5" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Categoria__idUsu__2A4B4B5E" />-->
+        <Association Name="FK__Reportes__idUsua__36B12243">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Reportes">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDContextStoreContainer">
+          <EntitySet Name="Activos" EntityType="Self.Activos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoriaActivos" EntityType="Self.CategoriaActivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reportes" EntityType="Self.Reportes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Activos__idCateg__300424B4" Association="Self.FK__Activos__idCateg__300424B4">
+            <End Role="CategoriaActivos" EntitySet="CategoriaActivos" />
+            <End Role="Activos" EntitySet="Activos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Activos__idProve__2F10007B" Association="Self.FK__Activos__idProve__2F10007B">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Activos" EntitySet="Activos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Asignacio__idAct__33D4B598" Association="Self.FK__Asignacio__idAct__33D4B598">
+            <End Role="Activos" EntitySet="Activos" />
+            <End Role="Asignaciones" EntitySet="Asignaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Asignacio__idUsu__32E0915F" Association="Self.FK__Asignacio__idUsu__32E0915F">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Asignaciones" EntitySet="Asignaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reportes__idUsua__36B12243" Association="Self.FK__Reportes__idUsua__36B12243">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Reportes" EntitySet="Reportes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activos">
+          <Key>
+            <PropertyRef Name="idActivo" />
+          </Key>
+          <Property Name="idActivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProveedor" Type="Int32" />
+          <Property Name="idCategoriaActivo" Type="Int32" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="fechaCompra" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CategoriaActivos" Relationship="Self.FK__Activos__idCateg__300424B4" FromRole="Activos" ToRole="CategoriaActivos" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Activos__idProve__2F10007B" FromRole="Activos" ToRole="Proveedores" />
+          <NavigationProperty Name="Asignaciones" Relationship="Self.FK__Asignacio__idAct__33D4B598" FromRole="Activos" ToRole="Asignaciones" />
+        </EntityType>
+        <EntityType Name="Asignaciones">
+          <Key>
+            <PropertyRef Name="idAsignacion" />
+          </Key>
+          <Property Name="idAsignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="idActivo" Type="Int32" />
+          <Property Name="fechaInicialAsignacion" Type="DateTime" Precision="3" />
+          <Property Name="fechaFinalAsignacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Activos" Relationship="Self.FK__Asignacio__idAct__33D4B598" FromRole="Asignaciones" ToRole="Activos" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Asignacio__idUsu__32E0915F" FromRole="Asignaciones" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="CategoriaActivos">
+          <Key>
+            <PropertyRef Name="idCategoriaActivos" />
+          </Key>
+          <Property Name="idCategoriaActivos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="categoria" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="garantia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Activos" Relationship="Self.FK__Activos__idCateg__300424B4" FromRole="CategoriaActivos" ToRole="Activos" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="idProveedor" />
+          </Key>
+          <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Activos" Relationship="Self.FK__Activos__idProve__2F10007B" FromRole="Proveedores" ToRole="Activos" />
+        </EntityType>
+        <EntityType Name="Reportes">
+          <Key>
+            <PropertyRef Name="idReporte" />
+          </Key>
+          <Property Name="idReporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idActivo" Type="Int32" />
+          <Property Name="idUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Reportes__idUsua__36B12243" FromRole="Reportes" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apellido1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Asignaciones" Relationship="Self.FK__Asignacio__idUsu__32E0915F" FromRole="Usuarios" ToRole="Asignaciones" />
+          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__idUsua__36B12243" FromRole="Usuarios" ToRole="Reportes" />
+        </EntityType>
+        <Association Name="FK__Activos__idCateg__300424B4">
+          <End Role="CategoriaActivos" Type="Self.CategoriaActivos" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaActivos">
+              <PropertyRef Name="idCategoriaActivos" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idCategoriaActivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Activos__idProve__2F10007B">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Asignacio__idAct__33D4B598">
+          <End Role="Activos" Type="Self.Activos" Multiplicity="0..1" />
+          <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activos">
+              <PropertyRef Name="idActivo" />
+            </Principal>
+            <Dependent Role="Asignaciones">
+              <PropertyRef Name="idActivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Asignacio__idUsu__32E0915F">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Asignaciones">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reportes__idUsua__36B12243">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Reportes">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SEGTRANSAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activos" EntityType="Self.Activos" />
+          <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" />
+          <EntitySet Name="CategoriaActivos" EntityType="Self.CategoriaActivos" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
+          <EntitySet Name="Reportes" EntityType="Self.Reportes" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK__Activos__idCateg__300424B4" Association="Self.FK__Activos__idCateg__300424B4">
+            <End Role="CategoriaActivos" EntitySet="CategoriaActivos" />
+            <End Role="Activos" EntitySet="Activos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Activos__idProve__2F10007B" Association="Self.FK__Activos__idProve__2F10007B">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Activos" EntitySet="Activos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Asignacio__idAct__33D4B598" Association="Self.FK__Asignacio__idAct__33D4B598">
+            <End Role="Activos" EntitySet="Activos" />
+            <End Role="Asignaciones" EntitySet="Asignaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Asignacio__idUsu__32E0915F" Association="Self.FK__Asignacio__idUsu__32E0915F">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Asignaciones" EntitySet="Asignaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reportes__idUsua__36B12243" Association="Self.FK__Reportes__idUsua__36B12243">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Reportes" EntitySet="Reportes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDContextStoreContainer" CdmEntityContainer="SEGTRANSAEntities">
+          <EntitySetMapping Name="Activos">
+            <EntityTypeMapping TypeName="BDContext.Activos">
+              <MappingFragment StoreEntitySet="Activos">
+                <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+                <ScalarProperty Name="idCategoriaActivo" ColumnName="idCategoriaActivo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Asignaciones">
+            <EntityTypeMapping TypeName="BDContext.Asignaciones">
+              <MappingFragment StoreEntitySet="Asignaciones">
+                <ScalarProperty Name="idAsignacion" ColumnName="idAsignacion" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+                <ScalarProperty Name="fechaInicialAsignacion" ColumnName="fechaInicialAsignacion" />
+                <ScalarProperty Name="fechaFinalAsignacion" ColumnName="fechaFinalAsignacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriaActivos">
+            <EntityTypeMapping TypeName="BDContext.CategoriaActivos">
+              <MappingFragment StoreEntitySet="CategoriaActivos">
+                <ScalarProperty Name="idCategoriaActivos" ColumnName="idCategoriaActivos" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="garantia" ColumnName="garantia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedores">
+            <EntityTypeMapping TypeName="BDContext.Proveedores">
+              <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reportes">
+            <EntityTypeMapping TypeName="BDContext.Reportes">
+              <MappingFragment StoreEntitySet="Reportes">
+                <ScalarProperty Name="idReporte" ColumnName="idReporte" />
+                <ScalarProperty Name="idActivo" ColumnName="idActivo" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="BDContext.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

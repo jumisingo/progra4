@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ce203b7e6cb441fb991a98807c960001" Name="Diagram1">
+        <EntityTypeShape EntityType="BDContext.Activos" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDContext.Asignaciones" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDContext.CategoriaActivos" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDContext.Proveedores" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDContext.Reportes" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDContext.Usuarios" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="BDContext.FK__Activos__idCateg__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="BDContext.FK__Activos__idProve__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="BDContext.FK__Asignacio__idAct__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="BDContext.FK__Asignacio__idUsu__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="BDContext.FK__Reportes__idUsua__36B12243" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
