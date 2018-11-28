@@ -5,12 +5,13 @@
       <EntityTypeMapping TypeName="SEGTRANSAModel.Activos">
         <MappingFragment StoreEntitySet="Activos">
           <ScalarProperty Name="idActivo" ColumnName="idActivo" />
-          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
-          <ScalarProperty Name="idCategoriaActivo" ColumnName="idCategoriaActivo" />
+          <ScalarProperty Name="nombreActivo" ColumnName="nombreActivo" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
           <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="precioInicial" ColumnName="precioInicial" />
           <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="idEstadoActivo" ColumnName="idEstadoActivo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -21,17 +22,25 @@
           <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
           <ScalarProperty Name="idActivo" ColumnName="idActivo" />
           <ScalarProperty Name="fechaInicialAsignacion" ColumnName="fechaInicialAsignacion" />
-          <ScalarProperty Name="fechaFinalAsignacion" ColumnName="fechaFinalAsignacion" />
+          <ScalarProperty Name="fechafinalAsignacion" ColumnName="fechafinalAsignacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CategoriaActivos">
-      <EntityTypeMapping TypeName="SEGTRANSAModel.CategoriaActivos">
-        <MappingFragment StoreEntitySet="CategoriaActivos">
-          <ScalarProperty Name="idCategoriaActivos" ColumnName="idCategoriaActivos" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="categoria" ColumnName="categoria" />
-          <ScalarProperty Name="garantia" ColumnName="garantia" />
+    <EntitySetMapping Name="Bitacora">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.Bitacora">
+        <MappingFragment StoreEntitySet="Bitacora">
+          <ScalarProperty Name="idBitacora" ColumnName="idBitacora" />
+          <ScalarProperty Name="fechaBitacora" ColumnName="fechaBitacora" />
+          <ScalarProperty Name="detalleBitacora" ColumnName="detalleBitacora" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoActivos">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.EstadoActivos">
+        <MappingFragment StoreEntitySet="EstadoActivos">
+          <ScalarProperty Name="idEstadoActivo" ColumnName="idEstadoActivo" />
+          <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -41,19 +50,16 @@
           <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="direccion" ColumnName="direccion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Reportes">
-      <EntityTypeMapping TypeName="SEGTRANSAModel.Reportes">
-        <MappingFragment StoreEntitySet="Reportes">
-          <ScalarProperty Name="idReporte" ColumnName="idReporte" />
-          <ScalarProperty Name="idActivo" ColumnName="idActivo" />
-          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+    <EntitySetMapping Name="Rol_Usuarios">
+      <EntityTypeMapping TypeName="SEGTRANSAModel.Rol_Usuarios">
+        <MappingFragment StoreEntitySet="Rol_Usuarios">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -67,9 +73,10 @@
           <ScalarProperty Name="contrasena" ColumnName="contrasena" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
           <ScalarProperty Name="genero" ColumnName="genero" />
-          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="direccion" ColumnName="direccion" />
           <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -10,10 +10,10 @@ namespace Backend.DAL
 {
     public interface IReportesDAL : IDisposable
     {
-        void Add(Reportes Reporte);
-        void Delete(int idReporte);
-        void Update(Reportes Reporte);
-        Reportes GetReporte(int idReporte);
-        List<Reportes> GetReportes();
+       // void Add(Reportes Reporte);
+        //void Delete(int idReporte);
+        //void Update(Reportes Reporte);
+        //Reportes GetReporte(int idReporte);
+        //List<Reportes> GetReportes();
     }
 }
