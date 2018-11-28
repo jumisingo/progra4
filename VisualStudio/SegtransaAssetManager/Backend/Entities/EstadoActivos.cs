@@ -12,26 +12,18 @@ namespace Backend.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Activos
+    public partial class EstadoActivos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Activos()
+        public EstadoActivos()
         {
-            this.Asignaciones = new HashSet<Asignaciones>();
+            this.Activos = new HashSet<Activos>();
         }
     
-        public int idActivo { get; set; }
-        public string nombreActivo { get; set; }
-        public string descripcion { get; set; }
-        public byte[] foto { get; set; }
-        public Nullable<decimal> precioInicial { get; set; }
-        public Nullable<System.DateTime> fechaCompra { get; set; }
-        public Nullable<int> idProveedor { get; set; }
-        public Nullable<int> idEstadoActivo { get; set; }
+        public int idEstadoActivo { get; set; }
+        public string nombreEstado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Asignaciones> Asignaciones { get; set; }
-        public virtual EstadoActivos EstadoActivos { get; set; }
-        public virtual Proveedores Proveedores { get; set; }
+        public virtual ICollection<Activos> Activos { get; set; }
     }
 }

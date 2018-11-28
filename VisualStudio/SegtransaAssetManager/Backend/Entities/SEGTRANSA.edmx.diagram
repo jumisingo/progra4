@@ -4,18 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f23412381fba4ab1b1274fed2224dc4b" Name="Diagram1">
-        <EntityTypeShape EntityType="SEGTRANSAModel.Activos" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEGTRANSAModel.Asignaciones" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEGTRANSAModel.CategoriaActivos" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEGTRANSAModel.Proveedores" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEGTRANSAModel.Reportes" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SEGTRANSAModel.Usuarios" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="SEGTRANSAModel.FK__Activos__idCateg__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="SEGTRANSAModel.FK__Activos__idProve__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="SEGTRANSAModel.FK__Asignacio__idAct__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="SEGTRANSAModel.FK__Asignacio__idUsu__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="SEGTRANSAModel.FK__Reportes__idUsua__36B12243" ManuallyRouted="false" />
+      <Diagram DiagramId="eccd4624fb03475cad41e68778a1952e" Name="Diagram1">
+        <EntityTypeShape EntityType="SEGTRANSAModel.Activos" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEGTRANSAModel.Asignaciones" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEGTRANSAModel.Bitacora" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEGTRANSAModel.EstadoActivos" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEGTRANSAModel.Proveedores" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEGTRANSAModel.Rol_Usuarios" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SEGTRANSAModel.Usuarios" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="SEGTRANSAModel.FK_Allocations_Assets" ManuallyRouted="false" />
+        <AssociationConnector Association="SEGTRANSAModel.FK_Assets_Assets_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="SEGTRANSAModel.FK_Assets_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="SEGTRANSAModel.FK_Allocations_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SEGTRANSAModel.FK_Bitacora_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="SEGTRANSAModel.FK_Users_Rol_Users" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

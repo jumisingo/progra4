@@ -15,10 +15,10 @@ namespace Backend.Entities
     public partial class Asignaciones
     {
         public int idAsignacion { get; set; }
-        public string idUsuario { get; set; }
+        public Nullable<int> idUsuario { get; set; }
         public Nullable<int> idActivo { get; set; }
         public Nullable<System.DateTime> fechaInicialAsignacion { get; set; }
-        public Nullable<System.DateTime> fechaFinalAsignacion { get; set; }
+        public Nullable<System.DateTime> fechafinalAsignacion { get; set; }
     
         public virtual Activos Activos { get; set; }
         public virtual Usuarios Usuarios { get; set; }

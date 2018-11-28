@@ -9,114 +9,75 @@
           <Key>
             <PropertyRef Name="idActivo" />
           </Key>
-          <Property Name="idActivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idProveedor" Type="int" />
-          <Property Name="idCategoriaActivo" Type="int" />
-          <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="precio" Type="money" />
+          <Property Name="idActivo" Type="int" Nullable="false" />
+          <Property Name="nombreActivo" Type="nvarchar" MaxLength="50" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="90" />
           <Property Name="foto" Type="image" />
+          <Property Name="precioInicial" Type="money" />
           <Property Name="fechaCompra" Type="datetime" />
+          <Property Name="idProveedor" Type="int" />
+          <Property Name="idEstadoActivo" Type="int" />
         </EntityType>
         <EntityType Name="Asignaciones">
           <Key>
             <PropertyRef Name="idAsignacion" />
           </Key>
           <Property Name="idAsignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
+          <Property Name="idUsuario" Type="int" />
           <Property Name="idActivo" Type="int" />
           <Property Name="fechaInicialAsignacion" Type="datetime" />
-          <Property Name="fechaFinalAsignacion" Type="datetime" />
+          <Property Name="fechafinalAsignacion" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'SEGTRANSA.dbo.Bitacora' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="Bitacora">
-          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
-          <Property Name="fechaInicio" Type="datetime" />
-          <Property Name="fechaFin" Type="datetime" />
-        </EntityType>-->
-        <EntityType Name="CategoriaActivos">
           <Key>
-            <PropertyRef Name="idCategoriaActivos" />
+            <PropertyRef Name="idBitacora" />
           </Key>
-          <Property Name="idCategoriaActivos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="estado" Type="varchar" MaxLength="15" />
-          <Property Name="categoria" Type="varchar" MaxLength="45" />
-          <Property Name="garantia" Type="varchar" MaxLength="25" />
+          <Property Name="idBitacora" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fechaBitacora" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="detalleBitacora" Type="nvarchar" MaxLength="90" />
+          <Property Name="idUsuario" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'SEGTRANSA.dbo.CategoriaReportes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CategoriaReportes">
-          <Property Name="idReporte" Type="int" />
-          <Property Name="estado" Type="varchar" MaxLength="25" />
-          <Property Name="categoria" Type="varchar" MaxLength="45" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'SEGTRANSA.dbo.CategoriaUsuarios' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CategoriaUsuarios">
-          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
-          <Property Name="estado" Type="varchar" MaxLength="15" />
-          <Property Name="tipoUsuario" Type="varchar" MaxLength="15" />
-        </EntityType>-->
+        <EntityType Name="EstadoActivos">
+          <Key>
+            <PropertyRef Name="idEstadoActivo" />
+          </Key>
+          <Property Name="idEstadoActivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreEstado" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Proveedores">
           <Key>
             <PropertyRef Name="idProveedor" />
           </Key>
-          <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="25" />
-          <Property Name="telefono" Type="varchar" MaxLength="20" />
-          <Property Name="correo" Type="varchar" MaxLength="75" />
-          <Property Name="direccion" Type="varchar" MaxLength="75" />
+          <Property Name="idProveedor" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="75" />
+          <Property Name="email" Type="nvarchar" MaxLength="90" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="90" />
         </EntityType>
-        <EntityType Name="Reportes">
+        <EntityType Name="Rol_Usuarios">
           <Key>
-            <PropertyRef Name="idReporte" />
+            <PropertyRef Name="idRol" />
           </Key>
-          <Property Name="idReporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idActivo" Type="int" />
-          <Property Name="idUsuario" Type="varchar" MaxLength="12" />
-          <Property Name="descripcion" Type="varchar" MaxLength="75" />
-          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreRol" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="idUsuario" />
           </Key>
-          <Property Name="idUsuario" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="20" />
-          <Property Name="apellido1" Type="varchar" MaxLength="20" />
-          <Property Name="apellido2" Type="varchar" MaxLength="20" />
-          <Property Name="contrasena" Type="varchar" MaxLength="11" Nullable="false" />
-          <Property Name="telefono" Type="varchar" MaxLength="20" />
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellido2" Type="nvarchar" MaxLength="50" />
+          <Property Name="contrasena" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="50" />
           <Property Name="genero" Type="char" MaxLength="1" />
-          <Property Name="correo" Type="varchar" MaxLength="75" />
-          <Property Name="direccion" Type="varchar" MaxLength="75" />
+          <Property Name="email" Type="nvarchar" MaxLength="75" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="75" />
           <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="idRol" Type="int" />
         </EntityType>
-        <Association Name="FK__Activos__idCateg__300424B4">
-          <End Role="CategoriaActivos" Type="Self.CategoriaActivos" Multiplicity="0..1" />
-          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CategoriaActivos">
-              <PropertyRef Name="idCategoriaActivos" />
-            </Principal>
-            <Dependent Role="Activos">
-              <PropertyRef Name="idCategoriaActivo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Activos__idProve__2F10007B">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="idProveedor" />
-            </Principal>
-            <Dependent Role="Activos">
-              <PropertyRef Name="idProveedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Asignacio__idAct__33D4B598">
+        <Association Name="FK_Allocations_Assets">
           <End Role="Activos" Type="Self.Activos" Multiplicity="0..1" />
           <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -128,7 +89,7 @@ warning 6013: The table/view 'SEGTRANSA.dbo.CategoriaUsuarios' does not have a p
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Asignacio__idUsu__32E0915F">
+        <Association Name="FK_Allocations_Users">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
           <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -140,53 +101,85 @@ warning 6013: The table/view 'SEGTRANSA.dbo.CategoriaUsuarios' does not have a p
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'SEGTRANSA.dbo.Bitacora' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__Bitacora__idUsua__3A81B327" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'SEGTRANSA.dbo.CategoriaReportes' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__Categoria__idRep__38996AB5" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__Categoria__idUsu__2A4B4B5E" />-->
-        <Association Name="FK__Reportes__idUsua__36B12243">
+        <Association Name="FK_Assets_Assets_Status">
+          <End Role="EstadoActivos" Type="Self.EstadoActivos" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoActivos">
+              <PropertyRef Name="idEstadoActivo" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idEstadoActivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assets_Suppliers">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bitacora_Users">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="idUsuario" />
             </Principal>
-            <Dependent Role="Reportes">
+            <Dependent Role="Bitacora">
               <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Rol_Users">
+          <End Role="Rol_Usuarios" Type="Self.Rol_Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol_Usuarios">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="idRol" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SEGTRANSAModelStoreContainer">
           <EntitySet Name="Activos" EntityType="Self.Activos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CategoriaActivos" EntityType="Self.CategoriaActivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoActivos" EntityType="Self.EstadoActivos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Reportes" EntityType="Self.Reportes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol_Usuarios" EntityType="Self.Rol_Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Activos__idCateg__300424B4" Association="Self.FK__Activos__idCateg__300424B4">
-            <End Role="CategoriaActivos" EntitySet="CategoriaActivos" />
+          <AssociationSet Name="FK_Allocations_Assets" Association="Self.FK_Allocations_Assets">
+            <End Role="Activos" EntitySet="Activos" />
+            <End Role="Asignaciones" EntitySet="Asignaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Allocations_Users" Association="Self.FK_Allocations_Users">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Asignaciones" EntitySet="Asignaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assets_Assets_Status" Association="Self.FK_Assets_Assets_Status">
+            <End Role="EstadoActivos" EntitySet="EstadoActivos" />
             <End Role="Activos" EntitySet="Activos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Activos__idProve__2F10007B" Association="Self.FK__Activos__idProve__2F10007B">
+          <AssociationSet Name="FK_Assets_Suppliers" Association="Self.FK_Assets_Suppliers">
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="Activos" EntitySet="Activos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Asignacio__idAct__33D4B598" Association="Self.FK__Asignacio__idAct__33D4B598">
-            <End Role="Activos" EntitySet="Activos" />
-            <End Role="Asignaciones" EntitySet="Asignaciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Asignacio__idUsu__32E0915F" Association="Self.FK__Asignacio__idUsu__32E0915F">
+          <AssociationSet Name="FK_Bitacora_Users" Association="Self.FK_Bitacora_Users">
             <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Asignaciones" EntitySet="Asignaciones" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reportes__idUsua__36B12243" Association="Self.FK__Reportes__idUsua__36B12243">
+          <AssociationSet Name="FK_Users_Rol_Users" Association="Self.FK_Users_Rol_Users">
+            <End Role="Rol_Usuarios" EntitySet="Rol_Usuarios" />
             <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Reportes" EntitySet="Reportes" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -198,103 +191,87 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
           <Key>
             <PropertyRef Name="idActivo" />
           </Key>
-          <Property Name="idActivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idProveedor" Type="Int32" />
-          <Property Name="idCategoriaActivo" Type="Int32" />
-          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="idActivo" Type="Int32" Nullable="false" />
+          <Property Name="nombreActivo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
           <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="precioInicial" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="fechaCompra" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="CategoriaActivos" Relationship="Self.FK__Activos__idCateg__300424B4" FromRole="Activos" ToRole="CategoriaActivos" />
-          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Activos__idProve__2F10007B" FromRole="Activos" ToRole="Proveedores" />
-          <NavigationProperty Name="Asignaciones" Relationship="Self.FK__Asignacio__idAct__33D4B598" FromRole="Activos" ToRole="Asignaciones" />
+          <Property Name="idProveedor" Type="Int32" />
+          <Property Name="idEstadoActivo" Type="Int32" />
+          <NavigationProperty Name="Asignaciones" Relationship="Self.FK_Allocations_Assets" FromRole="Activos" ToRole="Asignaciones" />
+          <NavigationProperty Name="EstadoActivos" Relationship="Self.FK_Assets_Assets_Status" FromRole="Activos" ToRole="EstadoActivos" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK_Assets_Suppliers" FromRole="Activos" ToRole="Proveedores" />
         </EntityType>
         <EntityType Name="Asignaciones">
           <Key>
             <PropertyRef Name="idAsignacion" />
           </Key>
           <Property Name="idAsignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Int32" />
           <Property Name="idActivo" Type="Int32" />
           <Property Name="fechaInicialAsignacion" Type="DateTime" Precision="3" />
-          <Property Name="fechaFinalAsignacion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Activos" Relationship="Self.FK__Asignacio__idAct__33D4B598" FromRole="Asignaciones" ToRole="Activos" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Asignacio__idUsu__32E0915F" FromRole="Asignaciones" ToRole="Usuarios" />
+          <Property Name="fechafinalAsignacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Activos" Relationship="Self.FK_Allocations_Assets" FromRole="Asignaciones" ToRole="Activos" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Allocations_Users" FromRole="Asignaciones" ToRole="Usuarios" />
         </EntityType>
-        <EntityType Name="CategoriaActivos">
+        <EntityType Name="Bitacora">
           <Key>
-            <PropertyRef Name="idCategoriaActivos" />
+            <PropertyRef Name="idBitacora" />
           </Key>
-          <Property Name="idCategoriaActivos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="categoria" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="garantia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Activos" Relationship="Self.FK__Activos__idCateg__300424B4" FromRole="CategoriaActivos" ToRole="Activos" />
+          <Property Name="idBitacora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fechaBitacora" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="detalleBitacora" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="idUsuario" Type="Int32" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Bitacora_Users" FromRole="Bitacora" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="EstadoActivos">
+          <Key>
+            <PropertyRef Name="idEstadoActivo" />
+          </Key>
+          <Property Name="idEstadoActivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreEstado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Activos" Relationship="Self.FK_Assets_Assets_Status" FromRole="EstadoActivos" ToRole="Activos" />
         </EntityType>
         <EntityType Name="Proveedores">
           <Key>
             <PropertyRef Name="idProveedor" />
           </Key>
-          <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="correo" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
-          <Property Name="direccion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Activos" Relationship="Self.FK__Activos__idProve__2F10007B" FromRole="Proveedores" ToRole="Activos" />
+          <Property Name="idProveedor" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Activos" Relationship="Self.FK_Assets_Suppliers" FromRole="Proveedores" ToRole="Activos" />
         </EntityType>
-        <EntityType Name="Reportes">
+        <EntityType Name="Rol_Usuarios">
           <Key>
-            <PropertyRef Name="idReporte" />
+            <PropertyRef Name="idRol" />
           </Key>
-          <Property Name="idReporte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idActivo" Type="Int32" />
-          <Property Name="idUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="descripcion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Reportes__idUsua__36B12243" FromRole="Reportes" ToRole="Usuarios" />
+          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreRol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Users_Rol_Users" FromRole="Rol_Usuarios" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="idUsuario" />
           </Key>
-          <Property Name="idUsuario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="apellido1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="apellido2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="contrasena" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="apellido1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="apellido2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="correo" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
-          <Property Name="direccion" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
           <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Asignaciones" Relationship="Self.FK__Asignacio__idUsu__32E0915F" FromRole="Usuarios" ToRole="Asignaciones" />
-          <NavigationProperty Name="Reportes" Relationship="Self.FK__Reportes__idUsua__36B12243" FromRole="Usuarios" ToRole="Reportes" />
+          <Property Name="idRol" Type="Int32" />
+          <NavigationProperty Name="Asignaciones" Relationship="Self.FK_Allocations_Users" FromRole="Usuarios" ToRole="Asignaciones" />
+          <NavigationProperty Name="Bitacora" Relationship="Self.FK_Bitacora_Users" FromRole="Usuarios" ToRole="Bitacora" />
+          <NavigationProperty Name="Rol_Usuarios" Relationship="Self.FK_Users_Rol_Users" FromRole="Usuarios" ToRole="Rol_Usuarios" />
         </EntityType>
-        <Association Name="FK__Activos__idCateg__300424B4">
-          <End Role="CategoriaActivos" Type="Self.CategoriaActivos" Multiplicity="0..1" />
-          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CategoriaActivos">
-              <PropertyRef Name="idCategoriaActivos" />
-            </Principal>
-            <Dependent Role="Activos">
-              <PropertyRef Name="idCategoriaActivo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Activos__idProve__2F10007B">
-          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
-          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedores">
-              <PropertyRef Name="idProveedor" />
-            </Principal>
-            <Dependent Role="Activos">
-              <PropertyRef Name="idProveedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Asignacio__idAct__33D4B598">
+        <Association Name="FK_Allocations_Assets">
           <End Role="Activos" Type="Self.Activos" Multiplicity="0..1" />
           <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -306,7 +283,31 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Asignacio__idUsu__32E0915F">
+        <Association Name="FK_Assets_Assets_Status">
+          <End Role="EstadoActivos" Type="Self.EstadoActivos" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoActivos">
+              <PropertyRef Name="idEstadoActivo" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idEstadoActivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assets_Suppliers">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="Activos" Type="Self.Activos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="Activos">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Allocations_Users">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
           <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -318,44 +319,61 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reportes__idUsua__36B12243">
+        <Association Name="FK_Bitacora_Users">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
-          <End Role="Reportes" Type="Self.Reportes" Multiplicity="*" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
               <PropertyRef Name="idUsuario" />
             </Principal>
-            <Dependent Role="Reportes">
+            <Dependent Role="Bitacora">
               <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Rol_Users">
+          <End Role="Rol_Usuarios" Type="Self.Rol_Usuarios" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol_Usuarios">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="idRol" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BDContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Activos" EntityType="Self.Activos" />
           <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" />
-          <EntitySet Name="CategoriaActivos" EntityType="Self.CategoriaActivos" />
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" />
+          <EntitySet Name="EstadoActivos" EntityType="Self.EstadoActivos" />
           <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
-          <EntitySet Name="Reportes" EntityType="Self.Reportes" />
+          <EntitySet Name="Rol_Usuarios" EntityType="Self.Rol_Usuarios" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
-          <AssociationSet Name="FK__Activos__idCateg__300424B4" Association="Self.FK__Activos__idCateg__300424B4">
-            <End Role="CategoriaActivos" EntitySet="CategoriaActivos" />
+          <AssociationSet Name="FK_Allocations_Assets" Association="Self.FK_Allocations_Assets">
+            <End Role="Activos" EntitySet="Activos" />
+            <End Role="Asignaciones" EntitySet="Asignaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assets_Assets_Status" Association="Self.FK_Assets_Assets_Status">
+            <End Role="EstadoActivos" EntitySet="EstadoActivos" />
             <End Role="Activos" EntitySet="Activos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Activos__idProve__2F10007B" Association="Self.FK__Activos__idProve__2F10007B">
+          <AssociationSet Name="FK_Assets_Suppliers" Association="Self.FK_Assets_Suppliers">
             <End Role="Proveedores" EntitySet="Proveedores" />
             <End Role="Activos" EntitySet="Activos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Asignacio__idAct__33D4B598" Association="Self.FK__Asignacio__idAct__33D4B598">
-            <End Role="Activos" EntitySet="Activos" />
-            <End Role="Asignaciones" EntitySet="Asignaciones" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Asignacio__idUsu__32E0915F" Association="Self.FK__Asignacio__idUsu__32E0915F">
+          <AssociationSet Name="FK_Allocations_Users" Association="Self.FK_Allocations_Users">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="Asignaciones" EntitySet="Asignaciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reportes__idUsua__36B12243" Association="Self.FK__Reportes__idUsua__36B12243">
+          <AssociationSet Name="FK_Bitacora_Users" Association="Self.FK_Bitacora_Users">
             <End Role="Usuarios" EntitySet="Usuarios" />
-            <End Role="Reportes" EntitySet="Reportes" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Rol_Users" Association="Self.FK_Users_Rol_Users">
+            <End Role="Rol_Usuarios" EntitySet="Rol_Usuarios" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -368,12 +386,13 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
             <EntityTypeMapping TypeName="SEGTRANSAModel.Activos">
               <MappingFragment StoreEntitySet="Activos">
                 <ScalarProperty Name="idActivo" ColumnName="idActivo" />
-                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
-                <ScalarProperty Name="idCategoriaActivo" ColumnName="idCategoriaActivo" />
+                <ScalarProperty Name="nombreActivo" ColumnName="nombreActivo" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="precio" ColumnName="precio" />
                 <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="precioInicial" ColumnName="precioInicial" />
                 <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+                <ScalarProperty Name="idEstadoActivo" ColumnName="idEstadoActivo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -384,17 +403,25 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="idActivo" ColumnName="idActivo" />
                 <ScalarProperty Name="fechaInicialAsignacion" ColumnName="fechaInicialAsignacion" />
-                <ScalarProperty Name="fechaFinalAsignacion" ColumnName="fechaFinalAsignacion" />
+                <ScalarProperty Name="fechafinalAsignacion" ColumnName="fechafinalAsignacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CategoriaActivos">
-            <EntityTypeMapping TypeName="SEGTRANSAModel.CategoriaActivos">
-              <MappingFragment StoreEntitySet="CategoriaActivos">
-                <ScalarProperty Name="idCategoriaActivos" ColumnName="idCategoriaActivos" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="categoria" ColumnName="categoria" />
-                <ScalarProperty Name="garantia" ColumnName="garantia" />
+          <EntitySetMapping Name="Bitacora">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.Bitacora">
+              <MappingFragment StoreEntitySet="Bitacora">
+                <ScalarProperty Name="idBitacora" ColumnName="idBitacora" />
+                <ScalarProperty Name="fechaBitacora" ColumnName="fechaBitacora" />
+                <ScalarProperty Name="detalleBitacora" ColumnName="detalleBitacora" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoActivos">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.EstadoActivos">
+              <MappingFragment StoreEntitySet="EstadoActivos">
+                <ScalarProperty Name="idEstadoActivo" ColumnName="idEstadoActivo" />
+                <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -404,19 +431,16 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
                 <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Reportes">
-            <EntityTypeMapping TypeName="SEGTRANSAModel.Reportes">
-              <MappingFragment StoreEntitySet="Reportes">
-                <ScalarProperty Name="idReporte" ColumnName="idReporte" />
-                <ScalarProperty Name="idActivo" ColumnName="idActivo" />
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
-                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <EntitySetMapping Name="Rol_Usuarios">
+            <EntityTypeMapping TypeName="SEGTRANSAModel.Rol_Usuarios">
+              <MappingFragment StoreEntitySet="Rol_Usuarios">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -430,9 +454,10 @@ error 6004: The table 'SEGTRANSA.dbo.CategoriaUsuarios' is referenced by a relat
                 <ScalarProperty Name="contrasena" ColumnName="contrasena" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="genero" ColumnName="genero" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
