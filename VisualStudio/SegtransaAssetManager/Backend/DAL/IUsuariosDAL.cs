@@ -13,7 +13,7 @@ namespace Backend.DAL
         void Add(Usuarios Usuario);
         void Delete(int idUsuario);
         void Update(Usuarios Usuario);
-        Usuarios GetUsuario(string idUsuario);
+        Usuarios GetUsuario(int idUsuario);
         List<Usuarios> GetUsuarios();
     }
 }

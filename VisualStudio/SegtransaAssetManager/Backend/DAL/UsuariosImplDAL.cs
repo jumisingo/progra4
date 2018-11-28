@@ -21,7 +21,7 @@ public class UsuariosImplDAL : IUsuariosDAL
         }
     }
 
-    public void Delete(string idUsuario)
+    public void Delete(int idUsuario)
     {
         Usuarios Usuario = this.GetUsuario(idUsuario);
         using (context = new BDContext())
@@ -48,7 +48,7 @@ public class UsuariosImplDAL : IUsuariosDAL
         return result;
     }
 
-    public Usuarios GetUsuario(string idUsuario)
+    public Usuarios GetUsuario(int idUsuario)
     {
         Usuarios result;
         using (context = new BDContext())

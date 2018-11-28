@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\CategoriaActivosImplDAL.cs" />
+    <Compile Include="DAL\EstadoActivosImplDAL.cs" />
     <Compile Include="DAL\ReportesImplDAL.cs" />
     <Compile Include="DAL\ProveedoresImplDAL.cs" />
     <Compile Include="DAL\UsuariosImplDAL.cs" />
@@ -60,7 +60,7 @@
     <Compile Include="DAL\IReportesDAL.cs" />
     <Compile Include="DAL\IProveedoresDAL.cs" />
     <Compile Include="DAL\IAsignacionesDAL.cs" />
-    <Compile Include="DAL\ICategoriaActivosDAL.cs" />
+    <Compile Include="DAL\IEstadoActivosDAL.cs" />
     <Compile Include="DAL\IUsuariosDAL.cs" />
     <Compile Include="Entities\Activos.cs">
       <DependentUpon>Segtransa.tt</DependentUpon>
