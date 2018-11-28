@@ -11,7 +11,7 @@ namespace Backend.DAL
     public interface IUsuariosDAL : IDisposable
     {
         void Add(Usuarios Usuario);
-        void Delete(string idUsuario);
+        void Delete(int idUsuario);
         void Update(Usuarios Usuario);
         Usuarios GetUsuario(string idUsuario);
         List<Usuarios> GetUsuarios();
