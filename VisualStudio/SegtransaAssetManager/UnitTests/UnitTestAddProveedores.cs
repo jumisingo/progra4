@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace UnitTests
 {
     [TestClass]
-    public class UnitTestProveedores
+    public class UnitTestAddProveedores
     {
         [TestMethod]
         public void TestMethodAdd()
@@ -17,11 +17,12 @@ namespace UnitTests
 
             Proveedores proveedor = new Proveedores
             {
-                idProveedor = 100001,
+                idProveedor = 11,
                 nombre = "test",
                 telefono = "+506-2266-8996",
-                correo = "test@proveedor.com",
+                email = "test@proveedor.com",
                 direccion = "San Jose, Costa Rica",
+                
             };
             proveedoresDAL.Add(proveedor);
             Assert.AreEqual(count + 1, proveedoresDAL.GetProveedores().Count);
