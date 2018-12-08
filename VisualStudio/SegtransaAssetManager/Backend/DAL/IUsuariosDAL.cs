@@ -15,5 +15,9 @@ namespace Backend.DAL
         void Update(Usuarios Usuario);
         Usuarios GetUsuario(int idUsuario);
         List<Usuarios> GetUsuarios();
+
+        /*Metodos necesarios para validar al usuario*/
+        bool isRealUser(int idUsuario);
+        bool isValidPassword(string passUser, int idUsuario);
     }
 }

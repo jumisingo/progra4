@@ -45,19 +45,36 @@ public class UsuariosImplDAL : IUsuariosDAL
             result = (from c in context.Usuarios
                       select c).ToList();
         }
+        IRolUsuariosDAL rolUsuariosDAL = new RolUsuariosImplDAL();
+        foreach (Usuarios item in result)
+        {
+            item.Rol_Usuarios = rolUsuariosDAL.GetRol(item.idRol ?? default(int));
+        }
         return result;
     }
 
     public Usuarios GetUsuario(int idUsuario)
     {
-        Usuarios result;
-        using (context = new BDContext())
+        try
         {
-            result = (from c in context.Usuarios
-                      where c.idUsuario == idUsuario
-                      select c).First();
+            Usuarios result;
+            using (context = new BDContext())
+            {
+                result = (from c in context.Usuarios
+                          where c.idUsuario == idUsuario
+                          select c).First();
+            }
+            /*IRolUsuariosDAL rolUsuariosDAL = new RolUsuariosImplDAL();
+            result.Rol_Usuarios = rolUsuariosDAL.GetRol(result.idRol ?? default(int));*/
+            
+            return result;
         }
-        return result;
+        catch (Exception)
+        {
+
+            return null;
+        }
+
     }
 
     public void Update(Usuarios Usuario)
@@ -75,6 +92,26 @@ public class UsuariosImplDAL : IUsuariosDAL
         {
             throw;
         }
+    }
+    public bool isRealUser(int idUsuario)
+    {
+        bool real = false;
+        if (this.GetUsuario(idUsuario) != null)
+        {
+            real = true;
+        }
+        return real;
+    }
+    public bool isValidPassword(string passUser, int idUsuario)
+    {
+        CryptoEngine cryptoEngine = new CryptoEngine();
+        string passDecrypted = cryptoEngine.Decrypt(passUser);
+        bool valid = false;
+        if (this.GetUsuario(idUsuario).contrasena.Equals(passDecrypted))
+        {
+            valid = true;
+        }
+        return valid;
     }
 }
 
