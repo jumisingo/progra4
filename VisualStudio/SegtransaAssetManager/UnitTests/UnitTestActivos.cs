@@ -6,7 +6,7 @@ using Backend.Entities;
 namespace UnitTests
 {
     [TestClass]
-    public class UnitTestAddActivos
+    public class UnitTestActivos
     {
         [TestMethod]
         public void TestMethodAdd()
@@ -16,14 +16,8 @@ namespace UnitTests
 
             Activos activo = new Activos
             {
-                idActivo = 12,
-                nombreActivo = "ArticuloTest",
-                idProveedor = 1,
-                precioInicial = 100,
-                idEstadoActivo = 3
+
             };
-            activosDAL.Add(activo);
-            Assert.AreEqual(count + 1, activosDAL.GetActivos().Count);
         }
     }
 }

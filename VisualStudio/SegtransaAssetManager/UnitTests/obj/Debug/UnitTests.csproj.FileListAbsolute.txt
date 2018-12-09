@@ -11,10 +11,9 @@ C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetMana
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\bin\Debug\Backend.dll.config
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\bin\Debug\EntityFramework.xml
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.csprojAssemblyReference.cache
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.csproj.CoreCompileInputs.cache
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.csproj.CopyComplete
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.pdb
-C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\bin\Debug\UnitTests.dll.config
-C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\bin\Debug\EntityFramework.SqlServer.dll
