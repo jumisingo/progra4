@@ -39,6 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -49,11 +56,25 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTestActivos.cs" />
+    <Compile Include="UnitTestAddUsuarios.cs" />
+    <Compile Include="UnitTestAddAsignaciones.cs" />
+    <Compile Include="UnitTestAddEstadoActivos.cs" />
+    <Compile Include="UnitTestAddActivos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTestProveedores.cs" />
+    <Compile Include="UnitTestDeleteUsuarios.cs" />
+    <Compile Include="UnitTestDeleteAsignaciones.cs" />
+    <Compile Include="UnitTestDeleteEstadoActivos.cs" />
+    <Compile Include="UnitTestDeleteActivos.cs" />
+    <Compile Include="UnitTestUpdateUsuarios.cs" />
+    <Compile Include="UnitTestUpdateAsignaciones.cs" />
+    <Compile Include="UnitTestUpdateEstadoActivos.cs" />
+    <Compile Include="UnitTestUpdateActivos.cs" />
+    <Compile Include="UnitTestUpdateProveedores.cs" />
+    <Compile Include="UnitTestDeleteProveedores.cs" />
+    <Compile Include="UnitTestAddProveedores.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
