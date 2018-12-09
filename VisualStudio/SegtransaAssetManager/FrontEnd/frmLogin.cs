@@ -12,9 +12,9 @@ using Backend.Entities;
 
 namespace FrontEnd
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -63,7 +63,7 @@ namespace FrontEnd
                     pass = cryptoEngine.Encrypt(tbxPassword.Text);
 
                     /*user = usuariosDal.GetUsuario(id);*/
-                    showInfo(tbxPassword.Text + " " + pass);
+                    showInfo("Password: " + tbxPassword.Text + " Encryptada: " + pass);
                     /*Validanado usuario*/
                     if (usuariosDal.isRealUser(id))
                     {
@@ -72,9 +72,11 @@ namespace FrontEnd
                         {
                             /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
                             user = usuariosDal.GetUsuario(id);                            
-                            showInfo("Bienvenido " + user.nombre);
-                            Menu mainMenu = new Menu(user);
+                            /*showInfo("Bienvenido " + user.nombre);*/
+                            frmMenu mainMenu = new frmMenu(user, this);
                             mainMenu.Show();
+                            tbxUserId.Clear();
+                            tbxPassword.Clear();
                             this.Hide();
                         }
                         else

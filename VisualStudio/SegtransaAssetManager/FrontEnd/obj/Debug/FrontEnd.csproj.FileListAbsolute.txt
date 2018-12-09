@@ -27,6 +27,11 @@ C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetMana
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.CopyComplete
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.exe
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.pdb
-C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.Login.resources
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.Menu.resources
+C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmLogin.resources
+C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMenu.resources
+C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmActivos.resources
+C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMisActivos.resources
+C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMisDatos.resources
+C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmReportes.resources
+C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUsuarios.resources
