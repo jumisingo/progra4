@@ -1,4 +1,7 @@
-﻿namespace FrontEnd
+﻿using Backend.DAL;
+using Backend.Entities;
+
+namespace FrontEnd
 {
     partial class Activos
     {
