@@ -57,3 +57,4 @@ C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualSt
 C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.CopyComplete
 C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.exe
 C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.pdb
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmAddActivo.resources

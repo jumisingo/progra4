@@ -16,6 +16,8 @@ namespace FrontEnd
     {
         public frmActivos()
         {
+            IActivosDAL lista= new ActivosImplDAL();
+            listBox1.DataSource = lista.GetActivos();
             InitializeComponent();
         }
 
