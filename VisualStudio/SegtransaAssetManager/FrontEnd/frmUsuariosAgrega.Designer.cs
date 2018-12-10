@@ -50,6 +50,7 @@
             this.cmbBoxRol = new System.Windows.Forms.ComboBox();
             this.lblRol = new System.Windows.Forms.Label();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.grpBoxDatosPersonales.SuspendLayout();
             this.grpBoxDatosContacto.SuspendLayout();
             this.grpBoxAcceso.SuspendLayout();
@@ -74,10 +75,11 @@
             // 
             // cmbBoxGeneros
             // 
+            this.cmbBoxGeneros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxGeneros.FormattingEnabled = true;
             this.cmbBoxGeneros.Items.AddRange(new object[] {
-            "M",
             "F",
+            "M",
             "O"});
             this.cmbBoxGeneros.Location = new System.Drawing.Point(148, 167);
             this.cmbBoxGeneros.Name = "cmbBoxGeneros";
@@ -261,11 +263,22 @@
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(677, 387);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmUsuariosAgrega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.grpBoxAcceso);
             this.Controls.Add(this.grpBoxDatosContacto);
@@ -307,5 +320,6 @@
         private System.Windows.Forms.ComboBox cmbBoxRol;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

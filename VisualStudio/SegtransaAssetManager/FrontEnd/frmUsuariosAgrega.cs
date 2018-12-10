@@ -16,11 +16,12 @@ namespace FrontEnd
     {
         private IUsuariosDAL usuariosDAL;
         private IRolUsuariosDAL rolUsuariosDAL;
-        private Usuarios usuario;
+        private Usuarios Usuario;
         
         public frmUsuariosAgrega()
         {
             InitializeComponent();
+            usuariosDAL = new UsuariosImplDAL();
             rolUsuariosDAL = new RolUsuariosImplDAL();
         }
 
@@ -53,32 +54,26 @@ namespace FrontEnd
         {
             try
             {
-                usuario = new Usuarios();
-                usuario.nombre = txtNombre.Text;
-                usuario.apellido1 = txtApellido1.Text;
-                usuario.apellido2 = txtApellido2.Text;
-                usuario.genero = (String)cmbBoxGeneros.SelectedItem;
-                usuario.telefono = txtTelefono.Text;
-                usuario.email = txtEmail.Text;
-                usuario.direccion = txtDireccion.Text;
-                usuario.idRol = (int)cmbBoxRol.SelectedValue;
-                usuario.Rol_Usuarios = (Rol_Usuarios)cmbBoxRol.SelectedItem;
-                usuario.contrasena = txtContrasena.Text;
-                usuario.fechaCreacion = DateTime.Now;
+                Usuario = new Usuarios();
+                Usuario.nombre = txtNombre.Text;
+                Usuario.apellido1 = txtApellido1.Text;
+                Usuario.apellido2 = txtApellido2.Text;
+                Usuario.genero = (string)cmbBoxGeneros.SelectedItem;
+                Usuario.telefono = txtTelefono.Text;
+                Usuario.email = txtEmail.Text;
+                Usuario.direccion = txtDireccion.Text;
+                Usuario.idRol = (int)cmbBoxRol.SelectedValue;
+                Usuario.Rol_Usuarios = (Rol_Usuarios)cmbBoxRol.SelectedItem;
+                Usuario.contrasena = txtContrasena.Text;
+                Usuario.fechaCreacion =  DateTime.Now;
 
-                usuariosDAL.Add(usuario);
-                MessageBox.Show("Producto agregado");
+                usuariosDAL.Add(Usuario);
+                MessageBox.Show("Usuario agregado");
 
-                frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+                frmUsuarios frmUsuarios = new frmUsuarios();
 
                 this.Hide();
                 frmUsuarios.Show();
-
-
-
-
-
-
 
             }
             catch (Exception ex)
@@ -86,6 +81,16 @@ namespace FrontEnd
 
                 MessageBox.Show("Error " + ex.Message);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+           
+            frmUsuarios frmUsuarios = new frmUsuarios();
+
+            //this.Close();
+            this.Hide();
+            frmUsuarios.Show();
         }
     }
 }

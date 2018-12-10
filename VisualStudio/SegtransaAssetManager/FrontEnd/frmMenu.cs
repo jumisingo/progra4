@@ -87,7 +87,7 @@ namespace FrontEnd
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            printInfo();
         }
     }
 }
