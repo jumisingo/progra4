@@ -85,5 +85,9 @@ namespace FrontEnd
             this.Hide();
         }
 
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

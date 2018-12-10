@@ -14,10 +14,21 @@ public class UsuariosImplDAL : IUsuariosDAL
 
     public void Add(Usuarios Usuario)
     {
-        using (context = new BDContext())
+        try
         {
-            context.Usuarios.Add(Usuario);
-            context.SaveChanges();
+            using (context = new BDContext())
+            {
+                Usuario.Rol_Usuarios = (from c in context.Rol_Usuarios
+                                        where c.idRol == Usuario.idRol
+                                        select c).First();
+
+                context.Usuarios.Add(Usuario);
+                context.SaveChanges();
+            }
+        }
+        catch (Exception)
+        {
+            throw;
         }
     }
 

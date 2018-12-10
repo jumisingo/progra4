@@ -30,5 +30,12 @@ namespace FrontEnd
             this.Close();
             previousForm.Show();
         }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            frmUsuariosAgrega frm_UsuariosAgrega = new frmUsuariosAgrega();
+            frm_UsuariosAgrega.Show(this);
+            this.Hide();
+        }
     }
 }
