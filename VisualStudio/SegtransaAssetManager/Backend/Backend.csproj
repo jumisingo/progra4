@@ -107,17 +107,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Entities\Segtransa.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Segtransa.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
     <None Include="Entities\Segtransa.edmx.diagram">
       <DependentUpon>Segtransa.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Entities\Segtransa.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

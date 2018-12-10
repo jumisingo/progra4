@@ -22,3 +22,15 @@ C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAs
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.xml
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csproj.CopyComplete
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csprojAssemblyReference.cache
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.dll
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.pdb
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\Backend.dll.config
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\Backend.dll
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\Backend.pdb
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.dll
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.xml
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csproj.CopyComplete
