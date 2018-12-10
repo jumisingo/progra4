@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace FrontEnd
 {
-    public partial class Activos : Form
+    public partial class frmUpdateActivo : Form
     {
-        public Activos()
+        Form previousForm;
+
+        public frmUpdateActivo(frmActivos prevFrm)
         {
             InitializeComponent();
+            previousForm = prevFrm;
         }
     }
 }

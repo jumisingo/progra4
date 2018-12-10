@@ -34,10 +34,17 @@ namespace FrontEnd
             previousForm.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddActivo frm_AddActivo = new frmAddActivo(this);
             frm_AddActivo.Show(this);
+            this.Hide();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            frmUpdateActivo frm_UpdateActivo = new frmUpdateActivo(this);
+            frm_UpdateActivo.Show(this);
             this.Hide();
         }
     }

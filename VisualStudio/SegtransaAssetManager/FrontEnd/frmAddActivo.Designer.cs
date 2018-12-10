@@ -37,9 +37,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBxDesc = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtPrc = new System.Windows.Forms.TextBox();
+            this.txtNmbr = new System.Windows.Forms.TextBox();
+            this.dateCompra = new System.Windows.Forms.DateTimePicker();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cmbBoxStt = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -121,35 +124,67 @@
             this.txtBxDesc.Size = new System.Drawing.Size(121, 20);
             this.txtBxDesc.TabIndex = 8;
             // 
-            // textBox2
+            // txtPrc
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 199);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtPrc.Location = new System.Drawing.Point(122, 199);
+            this.txtPrc.Name = "txtPrc";
+            this.txtPrc.Size = new System.Drawing.Size(121, 20);
+            this.txtPrc.TabIndex = 10;
             // 
-            // textBox3
+            // txtNmbr
             // 
-            this.textBox3.Location = new System.Drawing.Point(122, 161);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtNmbr.Location = new System.Drawing.Point(122, 161);
+            this.txtNmbr.Name = "txtNmbr";
+            this.txtNmbr.Size = new System.Drawing.Size(121, 20);
+            this.txtNmbr.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dateCompra
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(33, 85);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dateCompra.Location = new System.Drawing.Point(33, 85);
+            this.dateCompra.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dateCompra.Name = "dateCompra";
+            this.dateCompra.Size = new System.Drawing.Size(200, 20);
+            this.dateCompra.TabIndex = 12;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(168, 320);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 13;
+            this.btnBack.Text = "Cancelar";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(33, 320);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Guardar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnAddActivo_Click);
+            // 
+            // cmbBoxStt
+            // 
+            this.cmbBoxStt.FormattingEnabled = true;
+            this.cmbBoxStt.Location = new System.Drawing.Point(122, 274);
+            this.cmbBoxStt.Name = "cmbBoxStt";
+            this.cmbBoxStt.Size = new System.Drawing.Size(121, 21);
+            this.cmbBoxStt.TabIndex = 15;
             // 
             // frmAddActivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 331);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(282, 355);
+            this.Controls.Add(this.cmbBoxStt);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.dateCompra);
+            this.Controls.Add(this.txtNmbr);
+            this.Controls.Add(this.txtPrc);
             this.Controls.Add(this.txtBxDesc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -161,7 +196,6 @@
             this.Controls.Add(this.label1);
             this.Name = "frmAddActivo";
             this.Text = "frmAddActivo";
-            this.Load += new System.EventHandler(this.frmAddActivo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,8 +212,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBxDesc;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtPrc;
+        private System.Windows.Forms.TextBox txtNmbr;
+        private System.Windows.Forms.DateTimePicker dateCompra;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbBoxStt;
     }
 }
