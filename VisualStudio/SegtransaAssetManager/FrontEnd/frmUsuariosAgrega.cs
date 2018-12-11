@@ -25,6 +25,15 @@ namespace FrontEnd
             rolUsuariosDAL = new RolUsuariosImplDAL();
         }
 
+        public frmUsuariosAgrega(Form prevForm)
+        {
+            InitializeComponent();
+            usuariosDAL = new UsuariosImplDAL();
+            rolUsuariosDAL = new RolUsuariosImplDAL();
+            previousForm = prevForm;
+        }
+
+        Form previousForm;
         private void CargaComboRoles()
         {
             cmbBoxRol.DisplayMember = "nombreRol";
@@ -45,9 +54,9 @@ namespace FrontEnd
             base.OnClosing(e);
             // Do not allow cancellation of the close operation.
             e.Cancel = false;
-            frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
 
-            frmUsuarios.Show();
+            previousForm.Show();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)

@@ -28,15 +28,15 @@ namespace FrontEnd
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            frmMenu frm_Menu = new frmMenu();
-            frm_Menu.Show();
-            //previousForm.Show();
+            //frmMenu frm_Menu = new frmMenu();
+            //frm_Menu.Show();
+            previousForm.Show();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            frmUsuariosAgrega frm_UsuariosAgrega = new frmUsuariosAgrega();
-            frm_UsuariosAgrega.Show(this);
+            frmUsuariosAgrega frm_UsuariosAgrega = new frmUsuariosAgrega(this);
+            frm_UsuariosAgrega.Show();
             this.Hide();
         }
     }
