@@ -15,7 +15,7 @@ namespace FrontEnd
     public partial class frmUsuarios : Form
     {
         private IUsuariosDAL usuariosDAL;
-        private List<Usuarios> Usuarios;
+        private List<Usuarios> usuarios;
 
         public frmUsuarios()
         {
@@ -25,8 +25,26 @@ namespace FrontEnd
         public frmUsuarios(Form prevForm)
         {
             InitializeComponent();
-            previousForm = prevForm;
             usuariosDAL = new UsuariosImplDAL();
+            previousForm = prevForm;
+        }
+
+        public void CargarLista()
+        {
+            lstUsuarios.Items.Clear();
+            usuarios = usuariosDAL.GetUsuarios();
+
+            foreach(var item in usuarios)
+            {
+                item.nombre = item.nombre + " " + item.apellido1 + " " + item.apellido2;
+            }
+
+
+            lstUsuarios.DisplayMember = "nombre";
+            lstUsuarios.ValueMember = "idUsuario";
+
+            lstUsuarios.DataSource = usuarios;
+
         }
 
         static Form previousForm;
@@ -36,26 +54,6 @@ namespace FrontEnd
             //frmMenu frm_Menu = new frmMenu();
             //frm_Menu.Show();
             previousForm.Show();
-        }
-
-        public void CargarLista()
-        {
-            lstUsuarios.Items.Clear();
-            Usuarios = usuariosDAL.GetUsuarios();
-           
-            //lstUsuarios.DisplayMember = "apellido1";
-
-            foreach(var item in Usuarios)
-            {
-                item.nombre = item.nombre.PadRight(20) + item.apellido1.PadRight(20) +
-                    item.apellido2.PadRight(20);
-            }
-
-            lstUsuarios.DisplayMember = "nombre";
-            lstUsuarios.ValueMember = "idUsuario";
-
-            lstUsuarios.DataSource = Usuarios;
-
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -68,14 +66,6 @@ namespace FrontEnd
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             CargarLista();
-        }
-
-        private void btnUpdateUser_Click(object sender, EventArgs e)
-        {
-            Usuarios Usuario = (Usuarios)lstUsuarios.SelectedItem;
-            frmUsuariosModifica frm_UsuariosModifica = new frmUsuariosModifica(this);
-            frm_UsuariosModifica.Show();
-            this.Hide();
         }
     }
 }

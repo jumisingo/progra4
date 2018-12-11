@@ -56,7 +56,7 @@
     <Compile Include="DAL\ReportesImplDAL.cs" />
     <Compile Include="DAL\ProveedoresImplDAL.cs" />
     <Compile Include="DAL\RolUsuariosImplDAL.cs" />
-    <EmbeddedResource Include="DAL\UsuariosImplDAL.cs" />
+    <Compile Include="DAL\UsuariosImplDAL.cs" />
     <Compile Include="DAL\AsignacionesImplDAL.cs" />
     <Compile Include="DAL\ActivosImplDAL.cs" />
     <Compile Include="DAL\IActivosDAL.cs" />
