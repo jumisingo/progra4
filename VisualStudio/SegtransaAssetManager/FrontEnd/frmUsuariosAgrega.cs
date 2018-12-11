@@ -33,7 +33,7 @@ namespace FrontEnd
             previousForm = prevForm;
         }
 
-        Form previousForm;
+        static Form previousForm;
         private void CargaComboRoles()
         {
             cmbBoxRol.DisplayMember = "nombreRol";

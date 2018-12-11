@@ -14,7 +14,7 @@ namespace FrontEnd
     public partial class frmMenu : Form
     {
         private Usuarios usuario;
-        Form previousForm;
+        static Form previousForm;
         public frmMenu()
         {
             InitializeComponent();
