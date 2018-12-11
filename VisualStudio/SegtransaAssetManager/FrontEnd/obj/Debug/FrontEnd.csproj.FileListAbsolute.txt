@@ -20,6 +20,7 @@ C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetMana
 C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMisDatos.resources
 C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmReportes.resources
 C:\Users\cdvillal\source\repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUsuarios.resources
+<<<<<<< HEAD
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\FrontEnd.exe.config
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\FrontEnd.exe
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\FrontEnd.pdb
@@ -45,3 +46,29 @@ C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAs
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.CopyComplete
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.exe
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.pdb
+=======
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\FrontEnd.exe.config
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\FrontEnd.exe
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\FrontEnd.pdb
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\Backend.dll
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\EntityFramework.dll
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\Backend.pdb
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\bin\Debug\Backend.dll.config
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csprojAssemblyReference.cache
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmActivos.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmLogin.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMenu.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMisActivos.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMisDatos.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmReportes.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUsuarios.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.Properties.Resources.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.GenerateResource.cache
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.CopyComplete
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.exe
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.pdb
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmAddActivo.resources
+C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUpdateActivo.resources
+>>>>>>> gamma
