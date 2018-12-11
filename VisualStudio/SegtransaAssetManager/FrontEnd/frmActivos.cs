@@ -47,5 +47,10 @@ namespace FrontEnd
             frm_UpdateActivo.Show(this);
             this.Hide();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            frmBuscarActivo frm_GetActivo = new frmBuscarActivo(this);
+        }
     }
 }
