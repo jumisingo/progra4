@@ -32,11 +32,11 @@
             this.lblId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbBoxStt = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateCompra = new System.Windows.Forms.DateTimePicker();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtPrcIni = new System.Windows.Forms.TextBox();
             this.txtBxDesc = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblId
             // 
@@ -85,14 +86,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Modificar Activo";
             // 
-            // button2
+            // btnGuardar
             // 
-            this.button2.Location = new System.Drawing.Point(42, 393);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(42, 393);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // cmbBoxStt
             // 
@@ -102,26 +104,26 @@
             this.cmbBoxStt.Size = new System.Drawing.Size(121, 21);
             this.cmbBoxStt.TabIndex = 27;
             // 
-            // dateTimePicker1
+            // dateCompra
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(42, 121);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 26;
+            this.dateCompra.Location = new System.Drawing.Point(42, 121);
+            this.dateCompra.Name = "dateCompra";
+            this.dateCompra.Size = new System.Drawing.Size(200, 20);
+            this.dateCompra.TabIndex = 26;
             // 
-            // textBox3
+            // txtNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(131, 197);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 25;
+            this.txtNombre.Location = new System.Drawing.Point(131, 197);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtNombre.TabIndex = 25;
             // 
-            // textBox2
+            // txtPrcIni
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 235);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 24;
+            this.txtPrcIni.Location = new System.Drawing.Point(131, 235);
+            this.txtPrcIni.Name = "txtPrcIni";
+            this.txtPrcIni.Size = new System.Drawing.Size(121, 20);
+            this.txtPrcIni.TabIndex = 24;
             // 
             // txtBxDesc
             // 
@@ -198,9 +200,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 428);
             this.Controls.Add(this.cmbBoxStt);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dateCompra);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtPrcIni);
             this.Controls.Add(this.txtBxDesc);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -209,7 +211,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblId);
@@ -227,11 +229,11 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ComboBox cmbBoxStt;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dateCompra;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtPrcIni;
         private System.Windows.Forms.TextBox txtBxDesc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
