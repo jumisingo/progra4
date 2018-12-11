@@ -65,17 +65,17 @@
     <Compile Include="frmActivos.Designer.cs">
       <DependentUpon>frmActivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddActivo.cs">
+    <Compile Include="frmActivosAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddActivo.Designer.cs">
-      <DependentUpon>frmAddActivo.cs</DependentUpon>
+    <Compile Include="frmActivosAdd.Designer.cs">
+      <DependentUpon>frmActivosAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBuscarActivo.cs">
+    <Compile Include="frmActivosBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBuscarActivo.Designer.cs">
-      <DependentUpon>frmBuscarActivo.cs</DependentUpon>
+    <Compile Include="frmActivosBuscar.Designer.cs">
+      <DependentUpon>frmActivosBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -101,7 +101,6 @@
     <Compile Include="frmMisDatos.Designer.cs">
       <DependentUpon>frmMisDatos.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="frmUsuariosAgrega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,13 +118,12 @@
     </Compile>
     <Compile Include="frmUsuariosModifica.Designer.cs">
       <DependentUpon>frmUsuariosModifica.cs</DependentUpon>
-=======
-    <Compile Include="frmUpdateActivo.cs">
+    </Compile>
+    <Compile Include="frmActivosUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdateActivo.Designer.cs">
-      <DependentUpon>frmUpdateActivo.cs</DependentUpon>
->>>>>>> gamma
+    <Compile Include="frmActivosUpdate.Designer.cs">
+      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,11 +142,11 @@
     <EmbeddedResource Include="frmActivos.resx">
       <DependentUpon>frmActivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddActivo.resx">
-      <DependentUpon>frmAddActivo.cs</DependentUpon>
+    <EmbeddedResource Include="frmActivosAdd.resx">
+      <DependentUpon>frmActivosAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBuscarActivo.resx">
-      <DependentUpon>frmBuscarActivo.cs</DependentUpon>
+    <EmbeddedResource Include="frmActivosBuscar.resx">
+      <DependentUpon>frmActivosBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -165,8 +163,8 @@
     <EmbeddedResource Include="frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdateActivo.resx">
-      <DependentUpon>frmUpdateActivo.cs</DependentUpon>
+    <EmbeddedResource Include="frmActivosUpdate.resx">
+      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

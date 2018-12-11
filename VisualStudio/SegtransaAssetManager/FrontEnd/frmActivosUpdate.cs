@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace FrontEnd
 {
-    public partial class frmUpdateActivo : Form
+    public partial class frmActivosUpdate : Form
     {
         Form previousForm;
         IActivosDAL activosDAL = new ActivosImplDAL();
@@ -20,7 +20,7 @@ namespace FrontEnd
         IEstadoActivosDAL estadoDAL = new EstadoActivosImplDAL();
         Activos activo = new Activos();
 
-        public frmUpdateActivo(frmActivos prevFrm, Activos referenciaActivo)
+        public frmActivosUpdate(frmActivos prevFrm, Activos referenciaActivo)
         {
             InitializeComponent();
             previousForm = prevFrm;

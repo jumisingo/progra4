@@ -12,23 +12,28 @@ using Backend.Entities;
 
 namespace FrontEnd
 {
-    public partial class frmAddActivo : Form
+    public partial class frmActivosAdd : Form
     {
-        IActivosDAL activosDAL = new ActivosImplDAL();
-        IProveedoresDAL proveedores = new ProveedoresImplDAL();
-        IEstadoActivosDAL estadoDAL = new EstadoActivosImplDAL();
+        private IActivosDAL activosDAL = new ActivosImplDAL();
+        private IProveedoresDAL proveedores = new ProveedoresImplDAL();
+        private IEstadoActivosDAL estadoDAL = new EstadoActivosImplDAL();
         Activos activo = new Activos();
 
-        public frmAddActivo(Form prevForm)
+        private List<Proveedores> listaP;
+        List<EstadoActivos> listaE;
+        public frmActivosAdd(Form prevForm)
         {
             previousForm = prevForm;
+            listaP = proveedores.GetProveedores(); ;
+            cmbBoxPrvdr.DataSource = listaP;
             cmbBoxPrvdr.DisplayMember = "nombre";
             cmbBoxPrvdr.ValueMember = "idProveedor";
-            cmbBoxPrvdr.DataSource = proveedores.GetProveedores();
+
+            listaE = estadoDAL.GetEstadoActivos();
+            cmbBoxStt.DataSource = listaE;
             cmbBoxStt.DisplayMember = "nombreEstado";
             cmbBoxStt.ValueMember = "idEstadoActivo";
-            cmbBoxStt.DataSource = estadoDAL.GetEstadoActivos();
-            
+
             InitializeComponent();
         }
 

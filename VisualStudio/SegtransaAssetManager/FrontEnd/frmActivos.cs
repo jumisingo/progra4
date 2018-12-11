@@ -16,16 +16,23 @@ namespace FrontEnd
     {
         public frmActivos()
         {
-            IActivosDAL lista= new ActivosImplDAL();
-            listBox1.DataSource = lista.GetActivos();
+            
             InitializeComponent();
         }
-
+        private IActivosDAL activosDAL;
+        
         public frmActivos(Form prevForm)
         {
+            activosDAL = new ActivosImplDAL();
+            List<Activos> listaActivos = activosDAL.GetActivos();
+            listBox1.ValueMember = "idActivo";
+            listBox1.DisplayMember = "nombreActivo";
+            listBox1.DataSource = listaActivos;
             InitializeComponent();
             previousForm = prevForm;
+
         }
+
 
         Form previousForm;
         private void btnBack_Click(object sender, EventArgs e)
@@ -36,21 +43,21 @@ namespace FrontEnd
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddActivo frm_AddActivo = new frmAddActivo(this);
+            frmActivosAdd frm_AddActivo = new frmActivosAdd(this);
             frm_AddActivo.Show(this);
             this.Hide();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmUpdateActivo frm_UpdateActivo = new frmUpdateActivo(this);
+            frmActivosUpdate frm_UpdateActivo = new frmActivosUpdate(this,listBox1.SelectedItem as Activos);
             frm_UpdateActivo.Show(this);
             this.Hide();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            frmBuscarActivo frm_GetActivo = new frmBuscarActivo(this);
+            frmActivosBuscar frm_GetActivo = new frmActivosBuscar(this);
         }
     }
 }

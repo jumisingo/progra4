@@ -12,12 +12,12 @@ using Backend.Entities;
 
 namespace FrontEnd
 {
-    public partial class frmBuscarActivo : Form
+    public partial class frmActivosBuscar : Form
     {
         IActivosDAL activosDAL = new ActivosImplDAL();
         IProveedoresDAL proveedoresDAL = new ProveedoresImplDAL();
         Activos esteActivo;
-        public frmBuscarActivo(Form prvForm)
+        public frmActivosBuscar(Form prvForm)
         {
             InitializeComponent();
             previousForm = prvForm;

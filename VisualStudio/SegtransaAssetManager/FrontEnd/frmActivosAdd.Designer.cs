@@ -1,6 +1,6 @@
 ﻿namespace FrontEnd
 {
-    partial class frmAddActivo
+    partial class frmActivosAdd
     {
         /// <summary>
         /// Required designer variable.

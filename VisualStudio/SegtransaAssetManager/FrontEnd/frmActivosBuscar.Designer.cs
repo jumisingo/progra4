@@ -1,6 +1,6 @@
 ﻿namespace FrontEnd
 {
-    partial class frmBuscarActivo
+    partial class frmActivosBuscar
     {
         /// <summary>
         /// Required designer variable.
