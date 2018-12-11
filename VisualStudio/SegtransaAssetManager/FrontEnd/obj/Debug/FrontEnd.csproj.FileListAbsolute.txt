@@ -60,3 +60,16 @@ C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualSt
 C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmAddActivo.resources
 C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUpdateActivo.resources
 C:\Users\Practicas\Documents\UFD\Programacion 4\Proyecto\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmBuscarActivo.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmActivos.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmLogin.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMenu.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMisActivos.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmMisDatos.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmReportes.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUsuarios.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.GenerateResource.cache
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.exe
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.pdb

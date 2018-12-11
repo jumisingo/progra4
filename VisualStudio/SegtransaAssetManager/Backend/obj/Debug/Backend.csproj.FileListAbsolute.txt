@@ -22,3 +22,15 @@ C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAs
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.xml
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\Backend.dll.config
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\Backend.dll
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\Backend.pdb
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csprojAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.dll
+C:\Users\Administrator\Documents\GitHub\progra4\VisualStudio\SegtransaAssetManager\Backend\obj\Debug\Backend.pdb
