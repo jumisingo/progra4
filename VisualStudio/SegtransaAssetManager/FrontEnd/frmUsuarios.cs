@@ -67,5 +67,13 @@ namespace FrontEnd
         {
             CargarLista();
         }
+
+        private void btnModifyUser_Click(object sender, EventArgs e)
+        {
+            Usuarios usuario = (Usuarios)lstUsuarios.SelectedItem;
+            frmUsuariosModifica frm_UsuariosModifica = new frmUsuariosModifica(usuario.idUsuario); //(this)
+            frm_UsuariosModifica.Show();
+            this.Hide();
+        }
     }
 }

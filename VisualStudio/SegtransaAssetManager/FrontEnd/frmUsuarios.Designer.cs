@@ -83,6 +83,7 @@
             this.btnModifyUser.TabIndex = 11;
             this.btnModifyUser.Text = "Modificar Usuario";
             this.btnModifyUser.UseVisualStyleBackColor = true;
+            this.btnModifyUser.Click += new System.EventHandler(this.btnModifyUser_Click);
             // 
             // btnDeleteUser
             // 
