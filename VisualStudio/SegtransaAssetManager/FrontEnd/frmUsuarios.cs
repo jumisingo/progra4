@@ -75,5 +75,34 @@ namespace FrontEnd
             frm_UsuariosModifica.Show();
             this.Hide();
         }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuarios usuario = (Usuarios)lstUsuarios.SelectedItem;
+              
+                DialogResult dialogResult = MessageBox.Show("Seguro que desea eliminar al usuario " + usuario.nombre + "?", "Confirmación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    usuariosDAL.Delete(usuario.idUsuario);
+                    MessageBox.Show("Usuario Eliminado");
+
+                    usuarios.Clear();
+                    lstUsuarios.DataSource = null;
+                    
+                    CargarLista();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Operacion Cancelada");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }
