@@ -41,8 +41,8 @@
             this.lblValProveedor = new System.Windows.Forms.Label();
             this.lblValNombre = new System.Windows.Forms.Label();
             this.lblValPrcIni = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblValDesc = new System.Windows.Forms.Label();
+            this.lblValStt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAtras
@@ -162,29 +162,29 @@
             this.lblValPrcIni.Size = new System.Drawing.Size(100, 22);
             this.lblValPrcIni.TabIndex = 15;
             // 
-            // label2
+            // lblValDesc
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(135, 197);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 22);
-            this.label2.TabIndex = 16;
+            this.lblValDesc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblValDesc.Location = new System.Drawing.Point(135, 197);
+            this.lblValDesc.Name = "lblValDesc";
+            this.lblValDesc.Size = new System.Drawing.Size(100, 22);
+            this.lblValDesc.TabIndex = 16;
             // 
-            // label3
+            // lblValStt
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(135, 231);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 22);
-            this.label3.TabIndex = 17;
+            this.lblValStt.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblValStt.Location = new System.Drawing.Point(135, 231);
+            this.lblValStt.Name = "lblValStt";
+            this.lblValStt.Size = new System.Drawing.Size(100, 22);
+            this.lblValStt.TabIndex = 17;
             // 
             // frmBuscarActivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(333, 319);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblValStt);
+            this.Controls.Add(this.lblValDesc);
             this.Controls.Add(this.lblValPrcIni);
             this.Controls.Add(this.lblValNombre);
             this.Controls.Add(this.lblValProveedor);
@@ -220,7 +220,7 @@
         private System.Windows.Forms.Label lblValProveedor;
         private System.Windows.Forms.Label lblValNombre;
         private System.Windows.Forms.Label lblValPrcIni;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblValDesc;
+        private System.Windows.Forms.Label lblValStt;
     }
 }

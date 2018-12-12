@@ -49,13 +49,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(164, 393);
+            this.button1.Location = new System.Drawing.Point(167, 363);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblId
             // 
@@ -88,7 +88,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(42, 393);
+            this.btnGuardar.Location = new System.Drawing.Point(42, 363);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
@@ -198,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 428);
+            this.ClientSize = new System.Drawing.Size(297, 403);
             this.Controls.Add(this.cmbBoxStt);
             this.Controls.Add(this.dateCompra);
             this.Controls.Add(this.txtNombre);

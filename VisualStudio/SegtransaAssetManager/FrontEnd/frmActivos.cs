@@ -43,7 +43,9 @@ namespace FrontEnd
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            frmUpdateActivo frm_UpdateActivo = new frmUpdateActivo(this);
+            Activos parametroActivos = new Activos();
+            parametroActivos = listBox1.SelectedItem as Activos;
+            frmUpdateActivo frm_UpdateActivo = new frmUpdateActivo(this, parametroActivos);
             frm_UpdateActivo.Show(this);
             this.Hide();
         }
