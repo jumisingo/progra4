@@ -45,6 +45,11 @@ public class ActivosImplDAL : IActivosDAL
             result = (from c in context.Activos
                       select c).ToList();
         }
+        IEstadoActivosDAL estadoActivosDAL = new EstadoActivosImplDAL();
+        foreach (var item in result)
+        {
+            item.EstadoActivos = estadoActivosDAL.GetEstadoActivo(item.idEstadoActivo ?? default(int));
+        }
         return result;
     }
 
@@ -57,6 +62,8 @@ public class ActivosImplDAL : IActivosDAL
                       where c.idActivo == idActivo
                       select c).First();
         }
+        IEstadoActivosDAL estadoActivosDAL = new EstadoActivosImplDAL();
+        result.EstadoActivos = estadoActivosDAL.GetEstadoActivo(result.idEstadoActivo ?? default(int));
         return result;
     }
 

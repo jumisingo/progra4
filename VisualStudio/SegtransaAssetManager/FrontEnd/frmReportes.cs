@@ -23,10 +23,20 @@ namespace FrontEnd
             previousForm = prevForm;
         }
 
-        Form previousForm;
+        static Form previousForm;
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+            previousForm.Show();
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Let the default behavior to happen.
+            base.OnClosing(e);
+            // Do not allow cancellation of the close operation.
+            e.Cancel = false;
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+
             previousForm.Show();
         }
     }

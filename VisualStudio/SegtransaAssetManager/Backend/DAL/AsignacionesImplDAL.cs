@@ -48,6 +48,18 @@ public class AsignacionesImplDAL : IAsignacionesDAL
         return result;
     }
 
+    public List<Asignaciones> GetAsignaciones(int idUsuario)
+    {
+        List<Asignaciones> result;
+        using (context = new BDContext())
+        {
+            result = (from c in context.Asignaciones
+                      where c.idUsuario == idUsuario
+                      select c).ToList();
+        }
+        return result;
+    }
+
     public Asignaciones GetAsignacion(int idAsignacion)
     {
         Asignaciones result;

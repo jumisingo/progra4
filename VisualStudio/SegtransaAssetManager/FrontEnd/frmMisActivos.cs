@@ -22,13 +22,54 @@ namespace FrontEnd
         {
             InitializeComponent();
             previousForm = prevForm;
+            id = idUsuario;
         }
 
-        Form previousForm;
+        static Form previousForm;
+        IAsignacionesDAL asignacionesDAL = new AsignacionesImplDAL();
+        IActivosDAL activosDAL = new ActivosImplDAL();
+        int id;
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
             previousForm.Show();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Let the default behavior to happen.
+            base.OnClosing(e);
+            // Do not allow cancellation of the close operation.
+            e.Cancel = false;
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+
+            previousForm.Show();
+        }
+
+        private void frmMisActivos_Load(object sender, EventArgs e)
+        {
+            List<Asignaciones> asignacionesUsuario = asignacionesDAL.GetAsignaciones(id);
+            List<Activos> activosUsuario = new List<Activos>();
+            lvMisActivos.View = View.Details;
+            lvMisActivos.Columns.Add("Id");
+            lvMisActivos.Columns.Add("Activo");
+            lvMisActivos.Columns.Add("Descripcion");
+            lvMisActivos.Columns.Add("Fecha de Compra");
+
+            lvMisActivos.Columns.Add("Estado");
+            string activo, nombreEstado, descripcion, fechaCompra, idAct; 
+            foreach (var item in asignacionesUsuario)
+            {
+                activo = activosDAL.GetActivo(item.idActivo ?? default(int)).nombreActivo;
+                nombreEstado = activosDAL.GetActivo(item.idActivo ?? default(int)).EstadoActivos.nombreEstado;
+                descripcion = activosDAL.GetActivo(item.idActivo ?? default(int)).descripcion;
+                fechaCompra = activosDAL.GetActivo(item.idActivo ?? default(int)).fechaCompra.ToString();
+                idAct = activosDAL.GetActivo(item.idActivo ?? default(int)).idActivo.ToString();
+                string[] listS = { idAct, activo, descripcion, fechaCompra, nombreEstado };
+                lvMisActivos.Items.Add(new ListViewItem(listS));
+            }
+            
         }
     }
 }

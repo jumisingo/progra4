@@ -93,11 +93,19 @@ namespace FrontEnd
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            frmUsuarios frmUsuarios = new frmUsuarios();
-
             //this.Close();
             this.Hide();
-            frmUsuarios.Show();
+            previousForm.Show();
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Let the default behavior to happen.
+            base.OnClosing(e);
+            // Do not allow cancellation of the close operation.
+            e.Cancel = false;
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+
+            previousForm.Show();
         }
     }
 }

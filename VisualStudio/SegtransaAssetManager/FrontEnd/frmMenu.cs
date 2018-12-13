@@ -89,5 +89,16 @@ namespace FrontEnd
         {
             printInfo();
         }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Let the default behavior to happen.
+            base.OnClosing(e);
+            // Do not allow cancellation of the close operation.
+            e.Cancel = false;
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+
+            previousForm.Show();
+        }
     }
 }

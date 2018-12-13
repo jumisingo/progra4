@@ -56,11 +56,6 @@ public class UsuariosImplDAL : IUsuariosDAL
             result = (from c in context.Usuarios
                       select c).ToList();
         }
-        /*IRolUsuariosDAL rolUsuariosDAL = new RolUsuariosImplDAL();
-        foreach (Usuarios item in result)
-        {
-            item.Rol_Usuarios = rolUsuariosDAL.GetRol(item.idRol ?? default(int));
-        }*/
         return result;
     }
 
@@ -75,9 +70,6 @@ public class UsuariosImplDAL : IUsuariosDAL
                           where c.idUsuario == idUsuario
                           select c).First();
             }
-            /*IRolUsuariosDAL rolUsuariosDAL = new RolUsuariosImplDAL();
-            result.Rol_Usuarios = rolUsuariosDAL.GetRol(result.idRol ?? default(int));*/
-            
             return result;
         }
         catch (Exception)

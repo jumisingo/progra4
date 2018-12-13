@@ -29,26 +29,39 @@
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
+            this.lvMisActivos = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(710, 409);
+            this.btnBack.Location = new System.Drawing.Point(532, 332);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(78, 29);
+            this.btnBack.Size = new System.Drawing.Size(58, 24);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Atras";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // lvMisActivos
+            // 
+            this.lvMisActivos.Location = new System.Drawing.Point(13, 13);
+            this.lvMisActivos.Name = "lvMisActivos";
+            this.lvMisActivos.Size = new System.Drawing.Size(575, 160);
+            this.lvMisActivos.TabIndex = 8;
+            this.lvMisActivos.UseCompatibleStateImageBehavior = false;
+            // 
             // frmMisActivos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.lvMisActivos);
             this.Controls.Add(this.btnBack);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMisActivos";
             this.Text = "MisActivos";
+            this.Load += new System.EventHandler(this.frmMisActivos_Load);
             this.ResumeLayout(false);
 
         }
@@ -56,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ListView lvMisActivos;
     }
 }

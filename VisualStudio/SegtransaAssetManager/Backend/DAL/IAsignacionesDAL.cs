@@ -15,5 +15,6 @@ namespace Backend.DAL
         void Update(Asignaciones Asignacion);
         Asignaciones GetAsignacion(int idAsignacion);
         List<Asignaciones> GetAsignaciones();
+        List<Asignaciones> GetAsignaciones(int idUsuario);
     }
 }

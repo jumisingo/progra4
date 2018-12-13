@@ -51,8 +51,6 @@ namespace FrontEnd
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            //frmMenu frm_Menu = new frmMenu();
-            //frm_Menu.Show();
             previousForm.Show();
         }
 
@@ -74,6 +72,16 @@ namespace FrontEnd
             frmUsuariosModifica frm_UsuariosModifica = new frmUsuariosModifica(usuario.idUsuario); //(this)
             frm_UsuariosModifica.Show();
             this.Hide();
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Let the default behavior to happen.
+            base.OnClosing(e);
+            // Do not allow cancellation of the close operation.
+            e.Cancel = false;
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+
+            previousForm.Show();
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e)

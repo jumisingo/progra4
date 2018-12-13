@@ -53,12 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmActivos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,12 +88,6 @@
     </Compile>
     <Compile Include="frmUsuariosAgrega.Designer.cs">
       <DependentUpon>frmUsuariosAgrega.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmUsuariosElimina.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUsuariosElimina.Designer.cs">
-      <DependentUpon>frmUsuariosElimina.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuariosModifica.cs">
       <SubType>Form</SubType>
@@ -144,9 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuariosAgrega.resx">
       <DependentUpon>frmUsuariosAgrega.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuariosElimina.resx">
-      <DependentUpon>frmUsuariosElimina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuariosModifica.resx">
       <DependentUpon>frmUsuariosModifica.cs</DependentUpon>
