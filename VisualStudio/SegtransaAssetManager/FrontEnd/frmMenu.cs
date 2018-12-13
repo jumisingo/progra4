@@ -14,7 +14,7 @@ namespace FrontEnd
     public partial class frmMenu : Form
     {
         private Usuarios usuario;
-        Form previousForm;
+        static Form previousForm;
         public frmMenu()
         {
             InitializeComponent();
@@ -85,5 +85,9 @@ namespace FrontEnd
             this.Hide();
         }
 
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            printInfo();
+        }
     }
 }

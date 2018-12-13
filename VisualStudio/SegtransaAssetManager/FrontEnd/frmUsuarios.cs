@@ -24,11 +24,20 @@ namespace FrontEnd
             previousForm = prevForm;
         }
 
-        Form previousForm;
+        static Form previousForm;
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+            //frmMenu frm_Menu = new frmMenu();
+            //frm_Menu.Show();
             previousForm.Show();
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            frmUsuariosAgrega frm_UsuariosAgrega = new frmUsuariosAgrega(this);
+            frm_UsuariosAgrega.Show();
+            this.Hide();
         }
     }
 }
