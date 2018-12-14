@@ -59,6 +59,18 @@
     <Compile Include="frmActivos.Designer.cs">
       <DependentUpon>frmActivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmActivosAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActivosAdd.Designer.cs">
+      <DependentUpon>frmActivosAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActivosSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActivosSearch.Designer.cs">
+      <DependentUpon>frmActivosSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     </Compile>
     <Compile Include="frmMisDatos.Designer.cs">
       <DependentUpon>frmMisDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmActivosUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActivosUpdate.designer.cs">
+      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuariosAgrega.cs">
       <SubType>Form</SubType>
@@ -112,6 +130,12 @@
     <EmbeddedResource Include="frmActivos.resx">
       <DependentUpon>frmActivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmActivosAdd.resx">
+      <DependentUpon>frmActivosAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActivosSearch.resx">
+      <DependentUpon>frmActivosSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmActivosUpdate.resx">
+      <DependentUpon>frmActivosUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
