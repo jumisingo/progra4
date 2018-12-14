@@ -34,7 +34,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(532, 332);
+            this.btnBack.Location = new System.Drawing.Point(530, 191);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(58, 24);
@@ -45,17 +45,21 @@
             // 
             // lvMisActivos
             // 
+            this.lvMisActivos.AllowColumnReorder = true;
+            this.lvMisActivos.GridLines = true;
+            this.lvMisActivos.HoverSelection = true;
             this.lvMisActivos.Location = new System.Drawing.Point(13, 13);
             this.lvMisActivos.Name = "lvMisActivos";
             this.lvMisActivos.Size = new System.Drawing.Size(575, 160);
             this.lvMisActivos.TabIndex = 8;
             this.lvMisActivos.UseCompatibleStateImageBehavior = false;
+            this.lvMisActivos.View = System.Windows.Forms.View.Details;
             // 
             // frmMisActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(600, 240);
             this.Controls.Add(this.lvMisActivos);
             this.Controls.Add(this.btnBack);
             this.Margin = new System.Windows.Forms.Padding(2);

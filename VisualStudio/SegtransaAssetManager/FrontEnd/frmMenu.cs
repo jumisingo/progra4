@@ -68,7 +68,7 @@ namespace FrontEnd
         private void btnMisDatos_Click(object sender, EventArgs e)
         {
             frmMisDatos frm_MisDatos = new frmMisDatos(usuario, this);
-            frm_MisDatos.Show(this);
+            frm_MisDatos.Show();
             this.Hide();
         }
 

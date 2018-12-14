@@ -46,5 +46,4 @@ C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAs
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.exe
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.pdb
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUsuariosAgrega.resources
-C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUsuariosElimina.resources
 C:\Users\cdvillal\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\FrontEnd\obj\Debug\FrontEnd.frmUsuariosModifica.resources

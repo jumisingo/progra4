@@ -56,9 +56,15 @@ namespace FrontEnd
             lvMisActivos.Columns.Add("Activo");
             lvMisActivos.Columns.Add("Descripcion");
             lvMisActivos.Columns.Add("Fecha de Compra");
-
             lvMisActivos.Columns.Add("Estado");
-            string activo, nombreEstado, descripcion, fechaCompra, idAct; 
+            lvMisActivos.Columns.Add("Proveedor");
+            lvMisActivos.Columns[1].Width = -2;
+            lvMisActivos.Columns[2].Width = -2;
+            lvMisActivos.Columns[3].Width = -2;
+            lvMisActivos.Columns[4].Width = -2;
+            lvMisActivos.Columns[5].Width = -2;
+            lvMisActivos.Columns[0].Width = -2;
+            string activo, nombreEstado, descripcion, fechaCompra, idAct, proveedor; 
             foreach (var item in asignacionesUsuario)
             {
                 activo = activosDAL.GetActivo(item.idActivo ?? default(int)).nombreActivo;
@@ -66,7 +72,8 @@ namespace FrontEnd
                 descripcion = activosDAL.GetActivo(item.idActivo ?? default(int)).descripcion;
                 fechaCompra = activosDAL.GetActivo(item.idActivo ?? default(int)).fechaCompra.ToString();
                 idAct = activosDAL.GetActivo(item.idActivo ?? default(int)).idActivo.ToString();
-                string[] listS = { idAct, activo, descripcion, fechaCompra, nombreEstado };
+                proveedor = activosDAL.GetActivo(item.idActivo ?? default(int)).Proveedores.nombre;
+                string[] listS = { idAct, activo, descripcion, fechaCompra, nombreEstado, proveedor };
                 lvMisActivos.Items.Add(new ListViewItem(listS));
             }
             
