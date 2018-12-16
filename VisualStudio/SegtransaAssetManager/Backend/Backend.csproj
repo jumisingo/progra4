@@ -111,7 +111,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SEGTRANSA.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Entities\SEGTRANSA.edmx.diagram">
       <DependentUpon>SEGTRANSA.edmx</DependentUpon>
     </None>

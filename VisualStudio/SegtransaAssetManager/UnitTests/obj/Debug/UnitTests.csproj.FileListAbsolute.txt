@@ -38,3 +38,23 @@ C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAs
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.csproj.CopyComplete
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\MELISSAVillalta\Source\Repos\jumisingo\progra4\VisualStudio\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\UnitTests.dll.config
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Backend.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Backend.pdb
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Backend.dll.config
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.csprojAssemblyReference.cache
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.csproj.CopyComplete
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\Efrain Lopez Salazar\Documents\Efrain\Universidad\Progra4\Proyecto\SegtransaAssetManager\UnitTests\obj\Debug\UnitTests.pdb

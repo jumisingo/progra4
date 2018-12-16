@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Backend.Entities;
+using Backend.DAL;
 
 namespace FrontEnd
 {
@@ -38,6 +40,41 @@ namespace FrontEnd
             //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
 
             previousForm.Show();
+        }
+
+        private void frmReportes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRepActivo_Click(object sender, EventArgs e)
+        {
+            frmRepActivo frmRepActivo = new frmRepActivo(this);
+            frmRepActivo.Show(this);            
+        }
+
+        private void btnRepBitacora_Click(object sender, EventArgs e)
+        {
+            frmRepBitacora frmRepBitacora = new frmRepBitacora(this);
+            frmRepBitacora.Show(this);
+        }
+
+        private void btnRepProveedor_Click(object sender, EventArgs e)
+        {
+            frmRepProveedor frmRepProveedor = new frmRepProveedor(this);
+            frmRepProveedor.Show(this);
+        }
+
+        private void btnRepRolUsuario_Click(object sender, EventArgs e)
+        {
+            frmRepRolUsuario frmRepRolUsuario = new frmRepRolUsuario(this);
+            frmRepRolUsuario.Show(this);
+        }
+
+        private void btnRepUsuario_Click(object sender, EventArgs e)
+        {
+            frmRepUsuario frmRepUsuario = new frmRepUsuario(this);
+            frmRepUsuario.Show(this);
         }
     }
 }

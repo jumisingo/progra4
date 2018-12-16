@@ -2,7 +2,7 @@
 
 namespace FrontEnd
 {
-    partial class frmMenu
+    partial class frmMenuReporte
     {
         /// <summary>
         /// Required designer variable.

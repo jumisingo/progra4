@@ -11,16 +11,16 @@ using Backend.DAL;
 using Backend.Entities;
 namespace FrontEnd
 {
-    public partial class frmMenu : Form
+    public partial class frmMenuReporte : Form
     {
         private Usuarios usuario;
         static Form previousForm;
-        public frmMenu()
+        public frmMenuReporte()
         {
             InitializeComponent();
 
         }
-        public frmMenu(Usuarios user, Form prevForm)
+        public frmMenuReporte(Usuarios user, Form prevForm)
         {
             InitializeComponent();
             if (user.idRol != 1)

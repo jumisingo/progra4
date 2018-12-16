@@ -73,7 +73,7 @@ namespace FrontEnd
                             /*Validado usuario y password se le da acceso a un menu de opciones de acuerdo a su roll, admin o cualquier otro*/
                             user = usuariosDal.GetUsuario(id);                            
                             /*showInfo("Bienvenido " + user.nombre);*/
-                            frmMenu mainMenu = new frmMenu(user, this);
+                            frmMenuReporte mainMenu = new frmMenuReporte(user, this);
                             mainMenu.Show();
                             tbxUserId.Clear();
                             tbxPassword.Clear();
