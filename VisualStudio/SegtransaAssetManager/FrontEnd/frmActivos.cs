@@ -14,17 +14,19 @@ namespace FrontEnd
 {
     public partial class frmActivos : Form
     {
-        IActivosDAL lista;
+        IActivosDAL activosDAL;
+        IEstadoActivosDAL estadosActivosDAL;
         public frmActivos()
         {
-            lista= new ActivosImplDAL();
-            listBox1.DataSource = lista.GetActivos();
             InitializeComponent();
         }
 
         public frmActivos(Form prevForm)
         {
             InitializeComponent();
+            activosDAL = new ActivosImplDAL();
+            estadosActivosDAL = new EstadoActivosImplDAL();
+            cargaListaActivos();
             previousForm = prevForm;
         }
 
@@ -42,23 +44,70 @@ namespace FrontEnd
             this.Hide();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            Activos parametroActivos = new Activos();
-            parametroActivos = listBox1.SelectedItem as Activos;
-            frmActivosUpdate frm_UpdateActivo = new frmActivosUpdate(this, parametroActivos);
-            frm_UpdateActivo.Show(this);
-            this.Hide();
-        }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             frmActivosSearch frm_GetActivo = new frmActivosSearch(this);
+            frm_GetActivo.Show(this);
+            this.Hide();
         }
 
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
-           //Agregar llamada a dal para cambiar EstadosActivo a desactivado (listBox1.SelectedItem as Activos);
+            try
+            {
+                Activos activo = activosDAL.GetActivo(Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text));
+                List<EstadoActivos> listaEstadosActivos = estadosActivosDAL.GetEstadoActivos();
+                activo.EstadoActivos = estadosActivosDAL.GetEstadoActivo(2);
+                activo.idEstadoActivo = estadosActivosDAL.GetEstadoActivo(2).idEstadoActivo;
+                activosDAL.Update(activo);
+                MessageBox.Show("Activo #" + activo.idActivo + " desactivado.");
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Por favor seleccione un activo de la lista");
+            }
+        }
+
+        private void btnUpdate_Click()
+        {
+            try
+            {
+                frmActivosUpdate activosUpdate = new frmActivosUpdate(this, activosDAL.GetActivo(Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text)));
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Por favor seleccione un activo de la lista");
+            }
+        }
+
+
+        private void cargaListaActivos()
+        {
+            List<Activos> listaActivos = activosDAL.GetActivos();
+            string nombreActivo, descripcionActivo, precio, fechaCompra, idAct, proveedor, estado;
+            foreach (var item in listaActivos)
+            {
+                nombreActivo = activosDAL.GetActivo(item.idActivo).nombreActivo;
+                estado = activosDAL.GetActivo(item.idActivo).EstadoActivos.nombreEstado;
+                descripcionActivo = activosDAL.GetActivo(item.idActivo).descripcion;
+                fechaCompra = activosDAL.GetActivo(item.idActivo).fechaCompra.ToString();
+                precio = activosDAL.GetActivo(item.idActivo).precioInicial.ToString(); 
+                idAct = activosDAL.GetActivo(item.idActivo).idActivo.ToString();
+                proveedor = activosDAL.GetActivo(item.idActivo).Proveedores.nombre;
+                ListViewItem viewItem = new ListViewItem(idAct);
+                viewItem.SubItems.Add(nombreActivo);
+                viewItem.SubItems.Add(descripcionActivo);
+                viewItem.SubItems.Add(precio);
+                viewItem.SubItems.Add(fechaCompra);
+                viewItem.SubItems.Add(proveedor);
+                viewItem.SubItems.Add(estado);
+                listView1.Items.Add(viewItem);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

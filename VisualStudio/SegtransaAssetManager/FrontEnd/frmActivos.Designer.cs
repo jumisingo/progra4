@@ -31,17 +31,24 @@ namespace FrontEnd
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.idActivo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nombreActivo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.precioInicial = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fechaCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.proveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.estadoActivo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(633, 332);
+            this.btnBack.Location = new System.Drawing.Point(1010, 518);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(77, 30);
@@ -50,19 +57,9 @@ namespace FrontEnd
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(88, 63);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(621, 244);
-            this.listBox1.TabIndex = 8;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(88, 332);
+            this.button1.Location = new System.Drawing.Point(26, 517);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
@@ -75,7 +72,7 @@ namespace FrontEnd
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 16);
+            this.label1.Location = new System.Drawing.Point(45, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 29);
@@ -84,7 +81,7 @@ namespace FrontEnd
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(487, 332);
+            this.button2.Location = new System.Drawing.Point(485, 517);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -95,7 +92,7 @@ namespace FrontEnd
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(345, 332);
+            this.btnUpdate.Location = new System.Drawing.Point(332, 517);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
@@ -106,7 +103,7 @@ namespace FrontEnd
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(219, 332);
+            this.btnBuscar.Location = new System.Drawing.Point(176, 517);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
@@ -115,17 +112,74 @@ namespace FrontEnd
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // listView1
+            // 
+            this.listView1.CausesValidation = false;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idActivo,
+            this.nombreActivo,
+            this.descripcion,
+            this.precioInicial,
+            this.fechaCompra,
+            this.proveedor,
+            this.estadoActivo});
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(26, 52);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1061, 455);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listView1.TabIndex = 14;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // idActivo
+            // 
+            this.idActivo.Text = "ID";
+            this.idActivo.Width = 48;
+            // 
+            // nombreActivo
+            // 
+            this.nombreActivo.Text = "Nombre";
+            this.nombreActivo.Width = 163;
+            // 
+            // descripcion
+            // 
+            this.descripcion.Text = "Descripcion";
+            this.descripcion.Width = 220;
+            // 
+            // precioInicial
+            // 
+            this.precioInicial.Text = "Precio Inicial";
+            this.precioInicial.Width = 98;
+            // 
+            // fechaCompra
+            // 
+            this.fechaCompra.Text = "Fecha de Compra";
+            this.fechaCompra.Width = 167;
+            // 
+            // proveedor
+            // 
+            this.proveedor.Text = "Proveedor";
+            this.proveedor.Width = 117;
+            // 
+            // estadoActivo
+            // 
+            this.estadoActivo.Text = "Estado";
+            this.estadoActivo.Width = 93;
+            // 
             // frmActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 384);
+            this.ClientSize = new System.Drawing.Size(1166, 555);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnBack);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmActivos";
@@ -138,11 +192,18 @@ namespace FrontEnd
         #endregion
 
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader idActivo;
+        private System.Windows.Forms.ColumnHeader nombreActivo;
+        private System.Windows.Forms.ColumnHeader descripcion;
+        private System.Windows.Forms.ColumnHeader precioInicial;
+        private System.Windows.Forms.ColumnHeader fechaCompra;
+        private System.Windows.Forms.ColumnHeader proveedor;
+        private System.Windows.Forms.ColumnHeader estadoActivo;
     }
 }

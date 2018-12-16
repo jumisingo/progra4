@@ -76,7 +76,6 @@ namespace FrontEnd
                 string[] listS = { idAct, activo, descripcion, fechaCompra, nombreEstado, proveedor };
                 lvMisActivos.Items.Add(new ListViewItem(listS));
             }
-            
         }
     }
 }

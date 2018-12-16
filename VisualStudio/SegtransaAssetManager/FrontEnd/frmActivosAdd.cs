@@ -15,20 +15,15 @@ namespace FrontEnd
     public partial class frmActivosAdd : Form
     {
         IActivosDAL activosDAL = new ActivosImplDAL();
-        IProveedoresDAL proveedores = new ProveedoresImplDAL();
-        IEstadoActivosDAL estadoDAL = new EstadoActivosImplDAL();
+        IProveedoresDAL proveedoresDAL;
+        IEstadoActivosDAL estadosDAL;
         Activos activo = new Activos();
 
         public frmActivosAdd(Form prevForm)
         {
             previousForm = prevForm;
-            cmbBoxPrvdr.DisplayMember = "nombre";
-            cmbBoxPrvdr.ValueMember = "idProveedor";
-            cmbBoxPrvdr.DataSource = proveedores.GetProveedores();
-            cmbBoxStt.DisplayMember = "nombreEstado";
-            cmbBoxStt.ValueMember = "idEstadoActivo";
-            cmbBoxStt.DataSource = estadoDAL.GetEstadoActivos();
-            
+            proveedoresDAL= new ProveedoresImplDAL();
+            estadosDAL = new EstadoActivosImplDAL();
             InitializeComponent();
         }
 
@@ -40,6 +35,20 @@ namespace FrontEnd
             previousForm.Show();
         }
 
+        private void cargaCombo()
+        {
+            cmbBoxPrvdr.DisplayMember = "nombre";
+            cmbBoxPrvdr.ValueMember = "idRol";
+            List<Proveedores> proveedor = proveedoresDAL.GetProveedores();
+
+            cmbBoxStt.DisplayMember = "nombreEstado";
+            cmbBoxStt.ValueMember = "idEstadoActivo";
+            List<EstadoActivos> estadosActivos = estadosDAL.GetEstadoActivos();
+
+            cmbBoxPrvdr.DataSource = proveedor;
+            cmbBoxStt.DataSource = estadosActivos;
+        }
+
         private void btnAddActivo_Click(object sender, EventArgs e)
         {
             try
@@ -48,13 +57,20 @@ namespace FrontEnd
                 activo.descripcion = txtBxDesc.Text;
                 activo.precioInicial = decimal.Parse(txtPrc.Text);
                 activo.fechaCompra = dateCompra.Value.Date;
-                activo.idProveedor = Convert.ToInt32(cmbBoxPrvdr.SelectedValue.ToString());
-                activo.idEstadoActivo = Convert.ToInt32(cmbBoxStt.SelectedValue.ToString());
+                activo.idProveedor = (int)cmbBoxPrvdr.SelectedValue;
+                activo.idEstadoActivo = (int)cmbBoxStt.SelectedValue;
+                activo.EstadoActivos = (EstadoActivos)cmbBoxPrvdr.SelectedItem;
+                activo.Proveedores = (Proveedores)cmbBoxPrvdr.SelectedItem;
                 activosDAL.Add(activo);
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Error"+ex.ToString());
             }
-        } 
+        }
+
+        private void frmActivosAdd_Load(object sender, EventArgs e)
+        {
+            cargaCombo();
+        }
     }
 }
