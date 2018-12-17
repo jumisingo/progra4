@@ -34,7 +34,6 @@ namespace FrontEnd
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.idActivo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -81,7 +80,7 @@ namespace FrontEnd
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(485, 517);
+            this.button2.Location = new System.Drawing.Point(316, 517);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
@@ -89,17 +88,6 @@ namespace FrontEnd
             this.button2.Text = "Desactivar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnDesactivar_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(332, 517);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 28);
-            this.btnUpdate.TabIndex = 12;
-            this.btnUpdate.Text = "Modificar";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnBuscar
             // 
@@ -176,7 +164,6 @@ namespace FrontEnd
             this.ClientSize = new System.Drawing.Size(1166, 555);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -195,7 +182,6 @@ namespace FrontEnd
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader idActivo;

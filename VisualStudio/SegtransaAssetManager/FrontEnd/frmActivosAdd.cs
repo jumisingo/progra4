@@ -14,7 +14,7 @@ namespace FrontEnd
 {
     public partial class frmActivosAdd : Form
     {
-        IActivosDAL activosDAL = new ActivosImplDAL();
+        IActivosDAL activosDAL;
         IProveedoresDAL proveedoresDAL;
         IEstadoActivosDAL estadosDAL;
         Activos activo = new Activos();
@@ -22,7 +22,8 @@ namespace FrontEnd
         public frmActivosAdd(Form prevForm)
         {
             previousForm = prevForm;
-            proveedoresDAL= new ProveedoresImplDAL();
+            activosDAL = new ActivosImplDAL();
+            proveedoresDAL = new ProveedoresImplDAL();
             estadosDAL = new EstadoActivosImplDAL();
             InitializeComponent();
         }
@@ -38,7 +39,7 @@ namespace FrontEnd
         private void cargaCombo()
         {
             cmbBoxPrvdr.DisplayMember = "nombre";
-            cmbBoxPrvdr.ValueMember = "idRol";
+            cmbBoxPrvdr.ValueMember = "idProveedor";
             List<Proveedores> proveedor = proveedoresDAL.GetProveedores();
 
             cmbBoxStt.DisplayMember = "nombreEstado";
@@ -53,14 +54,15 @@ namespace FrontEnd
         {
             try
             {
+                
                 activo.nombreActivo = txtNmbr.Text;
                 activo.descripcion = txtBxDesc.Text;
                 activo.precioInicial = decimal.Parse(txtPrc.Text);
                 activo.fechaCompra = dateCompra.Value.Date;
-                activo.idProveedor = (int)cmbBoxPrvdr.SelectedValue;
+                activo.idProveedor =  (int)cmbBoxPrvdr.SelectedValue;
                 activo.idEstadoActivo = (int)cmbBoxStt.SelectedValue;
-                activo.EstadoActivos = (EstadoActivos)cmbBoxPrvdr.SelectedItem;
-                activo.Proveedores = (Proveedores)cmbBoxPrvdr.SelectedItem;
+                activo.EstadoActivos = (EstadoActivos) cmbBoxStt.SelectedItem;
+                activo.Proveedores = (Proveedores) cmbBoxPrvdr.SelectedItem;
                 activosDAL.Add(activo);
             }catch(Exception ex)
             {
