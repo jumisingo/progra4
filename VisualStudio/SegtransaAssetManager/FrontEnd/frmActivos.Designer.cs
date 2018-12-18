@@ -43,6 +43,7 @@ namespace FrontEnd
             this.fechaCompra = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.proveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.estadoActivo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -157,11 +158,23 @@ namespace FrontEnd
             this.estadoActivo.Text = "Estado";
             this.estadoActivo.Width = 93;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(470, 518);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.TabIndex = 15;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // frmActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 555);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.button2);
@@ -191,5 +204,6 @@ namespace FrontEnd
         private System.Windows.Forms.ColumnHeader fechaCompra;
         private System.Windows.Forms.ColumnHeader proveedor;
         private System.Windows.Forms.ColumnHeader estadoActivo;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

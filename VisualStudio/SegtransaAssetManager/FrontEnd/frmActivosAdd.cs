@@ -56,16 +56,17 @@ namespace FrontEnd
             try
             {
                 activo = new Activos();
+                activo.idActivo = activosDAL.getNextId();
                 activo.nombreActivo = txtNmbr.Text;
                 activo.descripcion = txtBxDesc.Text;
                 activo.precioInicial = decimal.Parse(txtPrc.Text);
                 activo.fechaCompra = dateCompra.Value.Date;
                 activo.idProveedor = (int)cmbBoxPrvdr.SelectedValue;
                 activo.idEstadoActivo = (int)cmbBoxStt.SelectedValue;
-                activo.EstadoActivos = (EstadoActivos) cmbBoxStt.SelectedItem;
-                activo.Proveedores = (Proveedores) cmbBoxPrvdr.SelectedItem;
                 activosDAL.Add(activo);
-            }catch(Exception ex)
+                MessageBox.Show("Activo agregado!");
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show("Error"+ex.ToString());
             }
@@ -74,6 +75,16 @@ namespace FrontEnd
         private void frmActivosAdd_Load(object sender, EventArgs e)
         {
             cargaCombo();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Let the default behavior to happen.
+            base.OnClosing(e);
+            // Do not allow cancellation of the close operation.
+            e.Cancel = false;
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+            previousForm.Show();
         }
     }
 }

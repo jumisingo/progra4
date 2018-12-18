@@ -44,6 +44,16 @@ namespace FrontEnd
             this.Hide();
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Let the default behavior to happen.
+            base.OnClosing(e);
+            // Do not allow cancellation of the close operation.
+            e.Cancel = false;
+            //frmUsuariosAgrega frmUsuarios = new frmUsuariosAgrega();
+
+            previousForm.Show();
+        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             frmActivosSearch frm_GetActivo = new frmActivosSearch(this);
@@ -55,12 +65,18 @@ namespace FrontEnd
         {
             try
             {
-                Activos activo = activosDAL.GetActivo(Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text));
-                List<EstadoActivos> listaEstadosActivos = estadosActivosDAL.GetEstadoActivos();
-                activo.EstadoActivos = estadosActivosDAL.GetEstadoActivo(2);
-                activo.idEstadoActivo = estadosActivosDAL.GetEstadoActivo(2).idEstadoActivo;
-                activosDAL.Update(activo);
-                MessageBox.Show("Activo #" + activo.idActivo + " desactivado.");
+                if (listView1.SelectedItems.Count > 0)
+                {
+                    Activos activo = activosDAL.GetActivo(Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text));
+                    List<EstadoActivos> listaEstadosActivos = estadosActivosDAL.GetEstadoActivos();
+                    activo.EstadoActivos = estadosActivosDAL.GetEstadoActivo(2);
+                    activo.idEstadoActivo = estadosActivosDAL.GetEstadoActivo(2).idEstadoActivo;
+                    activosDAL.Update(activo);
+                    MessageBox.Show("Activo #" + activo.idActivo + " desactivado.");
+                } else
+                {
+                    MessageBox.Show("Por favor seleccionar activo a desabilitar!");
+                }
             }
             catch (NullReferenceException)
             {
@@ -105,5 +121,10 @@ namespace FrontEnd
             }
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            cargaListaActivos();
+        }
     }
 }

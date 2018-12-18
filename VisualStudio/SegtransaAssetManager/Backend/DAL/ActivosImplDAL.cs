@@ -87,5 +87,19 @@ public class ActivosImplDAL : IActivosDAL
             throw;
         }
     }
+
+    public int getNextId()
+    {
+        int nextId = 0;
+        foreach (var a in this.GetActivos())
+        {
+            if (a.idActivo > nextId)
+            {
+                nextId = a.idActivo;
+            }
+        }
+        nextId = nextId + 1;
+        return nextId;
+    }
 }
 

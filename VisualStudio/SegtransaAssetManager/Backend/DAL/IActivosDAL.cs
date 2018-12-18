@@ -15,5 +15,6 @@ namespace Backend.DAL
         void Update(Activos Activo);
         Activos GetActivo(int idActivo);
         List<Activos> GetActivos();
+        int getNextId();
     }
 }
