@@ -17,7 +17,7 @@ namespace FrontEnd
         IActivosDAL activosDAL;
         IProveedoresDAL proveedoresDAL;
         IEstadoActivosDAL estadosDAL;
-        Activos activo = new Activos();
+        Activos activo;
 
         public frmActivosAdd(Form prevForm)
         {
@@ -25,6 +25,7 @@ namespace FrontEnd
             activosDAL = new ActivosImplDAL();
             proveedoresDAL = new ProveedoresImplDAL();
             estadosDAL = new EstadoActivosImplDAL();
+            activo = new Activos();
             InitializeComponent();
         }
 
@@ -54,12 +55,12 @@ namespace FrontEnd
         {
             try
             {
-                
+                activo = new Activos();
                 activo.nombreActivo = txtNmbr.Text;
                 activo.descripcion = txtBxDesc.Text;
                 activo.precioInicial = decimal.Parse(txtPrc.Text);
                 activo.fechaCompra = dateCompra.Value.Date;
-                activo.idProveedor =  (int)cmbBoxPrvdr.SelectedValue;
+                activo.idProveedor = (int)cmbBoxPrvdr.SelectedValue;
                 activo.idEstadoActivo = (int)cmbBoxStt.SelectedValue;
                 activo.EstadoActivos = (EstadoActivos) cmbBoxStt.SelectedItem;
                 activo.Proveedores = (Proveedores) cmbBoxPrvdr.SelectedItem;

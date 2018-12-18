@@ -80,7 +80,7 @@ namespace FrontEnd
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(316, 517);
+            this.button2.Location = new System.Drawing.Point(324, 517);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);

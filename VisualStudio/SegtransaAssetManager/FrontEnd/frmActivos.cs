@@ -62,7 +62,7 @@ namespace FrontEnd
                 activosDAL.Update(activo);
                 MessageBox.Show("Activo #" + activo.idActivo + " desactivado.");
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Por favor seleccione un activo de la lista");
             }
@@ -74,7 +74,7 @@ namespace FrontEnd
             {
                 frmActivosUpdate activosUpdate = new frmActivosUpdate(this, activosDAL.GetActivo(Int32.Parse(listView1.SelectedItems[0].SubItems[0].Text)));
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Por favor seleccione un activo de la lista");
             }

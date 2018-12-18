@@ -17,7 +17,6 @@ namespace FrontEnd
         IActivosDAL activosDAL = new ActivosImplDAL();
         IProveedoresDAL proveedoresDAL = new ProveedoresImplDAL();
         IEstadoActivosDAL estadoActivosDAL = new EstadoActivosImplDAL();
-        Activos esteActivo;
 
         public frmActivosSearch(Form prvForm)
         {
@@ -39,14 +38,25 @@ namespace FrontEnd
 
         private void populateFields(Activos activo)
         {
-            int valProveedor = activo.idProveedor.Value;
-            lblValNombre.Text = activo.nombreActivo;
-            lblValPrcIni.Text = activo.precioInicial.ToString();
-            lblValProveedor.Text = proveedoresDAL.GetProveedor(valProveedor).ToString();
-            lblValDesc.Text = activo.descripcion;
-            valProveedor = activo.idEstadoActivo.Value;
-            lblValStt.Text = estadoActivosDAL.GetEstadoActivo(valProveedor).ToString();
-            //activo.idProveedor int? to int, look for method to parse
+            try
+            {
+                int valProveedor = activo.idProveedor.Value;
+                lblValNombre.Text = activo.nombreActivo;
+                lblValPrcIni.Text = activo.precioInicial.ToString();
+                lblValProveedor.Text = proveedoresDAL.GetProveedor(valProveedor).nombre;
+                lblValDesc.Text = activo.descripcion;
+                valProveedor = estadoActivosDAL.GetEstadoActivo(activo.idEstadoActivo.Value).idEstadoActivo;
+                lblValStt.Text = estadoActivosDAL.GetEstadoActivo(valProveedor).nombreEstado;
+                //activo.idProveedor int? to int, look for method to parse
+            } catch (System.InvalidOperationException ) {
+                MessageBox.Show("No se ha encontrado un activo con el identificador ingresado.");
+            } catch (ArgumentNullException)
+            {
+                MessageBox.Show("Por favor ingrese el Id del activo");
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
