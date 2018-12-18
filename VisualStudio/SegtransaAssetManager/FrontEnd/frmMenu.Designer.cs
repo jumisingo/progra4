@@ -30,6 +30,7 @@ namespace FrontEnd
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuReporte));
             this.btnMisActivos = new System.Windows.Forms.Button();
             this.btnMisDatos = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -47,32 +48,40 @@ namespace FrontEnd
             // 
             // btnMisActivos
             // 
-            this.btnMisActivos.Location = new System.Drawing.Point(12, 17);
+            this.btnMisActivos.Image = ((System.Drawing.Image)(resources.GetObject("btnMisActivos.Image")));
+            this.btnMisActivos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMisActivos.Location = new System.Drawing.Point(74, 17);
             this.btnMisActivos.Margin = new System.Windows.Forms.Padding(2);
             this.btnMisActivos.Name = "btnMisActivos";
-            this.btnMisActivos.Size = new System.Drawing.Size(73, 19);
+            this.btnMisActivos.Size = new System.Drawing.Size(106, 41);
             this.btnMisActivos.TabIndex = 0;
             this.btnMisActivos.Text = "Mis Activos";
+            this.btnMisActivos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMisActivos.UseVisualStyleBackColor = true;
             this.btnMisActivos.Click += new System.EventHandler(this.btnMisActivos_Click);
             // 
             // btnMisDatos
             // 
-            this.btnMisDatos.Location = new System.Drawing.Point(12, 41);
+            this.btnMisDatos.Image = ((System.Drawing.Image)(resources.GetObject("btnMisDatos.Image")));
+            this.btnMisDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMisDatos.Location = new System.Drawing.Point(73, 68);
             this.btnMisDatos.Margin = new System.Windows.Forms.Padding(2);
             this.btnMisDatos.Name = "btnMisDatos";
-            this.btnMisDatos.Size = new System.Drawing.Size(73, 19);
+            this.btnMisDatos.Size = new System.Drawing.Size(106, 41);
             this.btnMisDatos.TabIndex = 1;
             this.btnMisDatos.Text = "Mis Datos";
+            this.btnMisDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMisDatos.UseVisualStyleBackColor = true;
             this.btnMisDatos.Click += new System.EventHandler(this.btnMisDatos_Click);
             // 
             // btnReportes
             // 
-            this.btnReportes.Location = new System.Drawing.Point(12, 65);
+            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(130, 128);
             this.btnReportes.Margin = new System.Windows.Forms.Padding(2);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(150, 28);
+            this.btnReportes.Size = new System.Drawing.Size(150, 41);
             this.btnReportes.TabIndex = 2;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = true;
@@ -80,32 +89,36 @@ namespace FrontEnd
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Location = new System.Drawing.Point(89, 17);
+            this.btnUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.Image")));
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(249, 17);
             this.btnUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(73, 19);
+            this.btnUsuarios.Size = new System.Drawing.Size(106, 41);
             this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.Text = "   Usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnActivos
             // 
-            this.btnActivos.Location = new System.Drawing.Point(89, 41);
+            this.btnActivos.Image = ((System.Drawing.Image)(resources.GetObject("btnActivos.Image")));
+            this.btnActivos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActivos.Location = new System.Drawing.Point(250, 68);
             this.btnActivos.Margin = new System.Windows.Forms.Padding(2);
             this.btnActivos.Name = "btnActivos";
-            this.btnActivos.Size = new System.Drawing.Size(73, 19);
+            this.btnActivos.Size = new System.Drawing.Size(106, 41);
             this.btnActivos.TabIndex = 4;
-            this.btnActivos.Text = "Activos";
+            this.btnActivos.Text = "   Activos";
             this.btnActivos.UseVisualStyleBackColor = true;
             this.btnActivos.Click += new System.EventHandler(this.btnActivos_Click);
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(14, 207);
+            this.btnLogout.Location = new System.Drawing.Point(190, 300);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(61, 24);
+            this.btnLogout.Size = new System.Drawing.Size(80, 37);
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Salir";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -113,12 +126,12 @@ namespace FrontEnd
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(131, 207);
+            this.btnBack.Location = new System.Drawing.Point(291, 300);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(58, 24);
+            this.btnBack.Size = new System.Drawing.Size(109, 37);
             this.btnBack.TabIndex = 6;
-            this.btnBack.Text = "Atras";
+            this.btnBack.Text = "Log Out";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -130,7 +143,7 @@ namespace FrontEnd
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(176, 81);
+            this.groupBox1.Size = new System.Drawing.Size(426, 81);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bienvenido";
@@ -138,10 +151,11 @@ namespace FrontEnd
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.Location = new System.Drawing.Point(102, 15);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(35, 13);
+            this.lblFecha.Size = new System.Drawing.Size(45, 16);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "label1";
             // 
@@ -166,22 +180,22 @@ namespace FrontEnd
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(176, 98);
+            this.groupBox2.Size = new System.Drawing.Size(426, 183);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acciones";
             // 
-            // frmMenu
+            // frmMenuReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(205, 250);
+            this.ClientSize = new System.Drawing.Size(480, 348);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnLogout);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmMenu";
+            this.Name = "frmMenuReporte";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.groupBox1.ResumeLayout(false);
